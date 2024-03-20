@@ -1,0 +1,1 @@
+-- SQL statements for initializing table --
