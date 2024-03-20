@@ -7,7 +7,7 @@ CREATE TABLE Users(username VARCHAR(50),
 );
 
 -- Recipe table
-CREATE TABLE Recipe (recipeID INT AUTO_INCREMENT,
+CREATE TABLE Recipe(recipeID INT AUTO_INCREMENT,
                      recipeName VARCHAR(255) NOT NULL,
                      descr TEXT,
                      cookTime INT,
@@ -32,7 +32,7 @@ CREATE TABLE Favorite(recipeID INT,
 );
 
 -- Create table
-CREATE TABLE Create (username VARCHAR(50), 
+CREATE TABLE Creates(username VARCHAR(50), 
                      recipeID INT,
                      PRIMARY KEY (username, recipeID),
                      FOREIGN KEY (username) REFERENCES Users(username),
@@ -40,13 +40,13 @@ CREATE TABLE Create (username VARCHAR(50),
 );
 
 -- Category table
-CREATE TABLE Category (categoryID INT AUTO_INCREMENT,
+CREATE TABLE Category(categoryID INT AUTO_INCREMENT,
                        categoryName VARCHAR(50) NOT NULL,
                        PRIMARY KEY (categoryID)
 );
 
 -- Categorized table
-CREATE TABLE Categorized (categoryID INT,
+CREATE TABLE Categorized(categoryID INT,
                           recipeID INT,
                           PRIMARY KEY (categoryID, recipeID),
                           FOREIGN KEY (categoryID) REFERENCES Category(categoryID),
@@ -54,7 +54,7 @@ CREATE TABLE Categorized (categoryID INT,
 );
 
 -- Instruction table
-CREATE TABLE Instruction (recipeID INT,
+CREATE TABLE Instruction(recipeID INT,
                           stepNumber INT,
                           step TEXT,
                           PRIMARY KEY (recipeID, stepNumber),
@@ -62,7 +62,7 @@ CREATE TABLE Instruction (recipeID INT,
 );
 
 -- Ingredient table
-CREATE TABLE Ingredient (recipeID INT,
+CREATE TABLE Ingredient(recipeID INT,
                          ingredientName VARCHAR(50) NOT NULL,
                          cost DECIMAL(10, 2),
                          PRIMARY KEY (recipeID, ingredientName),
@@ -70,13 +70,13 @@ CREATE TABLE Ingredient (recipeID INT,
 );
 
 -- Photo table
-CREATE TABLE Photo (photoID INT AUTO_INCREMENT,
+CREATE TABLE Photo(photoID INT AUTO_INCREMENT,
                     photoURL VARCHAR(500) NOT NULL,
                     PRIMARY KEY (photoID)
 );
 
 -- Displays table
-CREATE TABLE Displays (recipeID INT,
+CREATE TABLE Displays(recipeID INT,
                        photoID INT,
                        PRIMARY KEY (recipeID, photoID),
                        FOREIGN KEY (recipeID) REFERENCES Recipe(recipeID),
@@ -84,7 +84,7 @@ CREATE TABLE Displays (recipeID INT,
 );
 
 -- Comment table
-CREATE TABLE Comment (username VARCHAR(50),
+CREATE TABLE Comment(username VARCHAR(50),
                       commentID INT AUTO_INCREMENT,
                       recipeID INT,
                       commentText TEXT,
