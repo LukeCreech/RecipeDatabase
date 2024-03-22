@@ -92,3 +92,15 @@ CREATE TABLE Comment(username VARCHAR(50),
                       FOREIGN KEY (username) REFERENCES Users(username),
                       FOREIGN KEY (recipeID) REFERENCES Recipe(recipeID)
 );
+
+-- Retrieve data
+
+-- Add data
+
+-- Update data
+
+-- Delete data
+
+-- Search/filter data
+
+-- Advanced SQL
