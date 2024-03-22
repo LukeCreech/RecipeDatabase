@@ -93,6 +93,23 @@ CREATE TABLE Comment(username VARCHAR(50),
                       FOREIGN KEY (recipeID) REFERENCES Recipe(recipeID)
 );
 
+-- Fill in data for User table
+INSERT INTO Users (username, pword)
+VALUES ('lukecreech', 'lmc3axn'), 
+('nadiaeisa', 'nwe4n'),
+('ashleyrommel', 'zwu6su'),
+('grantcostello', 'ded5nh');
+
+-- Fill in data for recipe table
+
+
+
+
+
+
+
+
+
 -- Retrieve data
 
 -- Add data
