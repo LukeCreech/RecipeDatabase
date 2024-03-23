@@ -156,21 +156,3 @@ VALUES (1, 1);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("lukecreech", 1, "This is a really great and healthy recipe!");
-
-
-
-
-
-
-
--- Retrieve data
-
--- Add data
-
--- Update data
-
--- Delete data
-
--- Search/filter data
-
--- Advanced SQL
