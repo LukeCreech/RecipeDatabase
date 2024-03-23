@@ -101,7 +101,7 @@ VALUES ('lukecreech', 'lmc3axn'),
 ('grantcostello', 'ded5nh');
 
 
--- Data entries must fill in Recipe, Creates, Instruction, Ingredient, Category/Categorized
+-- Data entries must fill in Recipe, Creates, Instruction, Ingredient, and Category/Categorized first
 -- If the new entry does not apply to any already existing category, you must add a new one
 
 -- Insert Caeser Salad https://www.budgetbytes.com/caesar-salad/
@@ -141,6 +141,21 @@ VALUES (1, 1),
 (2, 1),
 (3, 1),
 (4, 1);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("lukecreech", 1, 4);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (1, "lukecreech");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/03/Caesar-Salad-Overhead-800x600.jpg")
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (1, 1);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("lukecreech", 1, "This is a really great and healthy recipe!");
 
 
 
