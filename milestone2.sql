@@ -252,31 +252,84 @@ INSERT INTO Recipe (recipeName, descr, cookTime)
 VALUES ("Soft Boiled Eggs", "Perfect soft boiled eggs with firm whites and liquid gold centers are only six minutes away. Use this easy step by step guide for perfect eggs every time.", 10);
 
 INSERT INTO Creates (username, recipeID)
-VALUES ("nadiaeisa", 4);
+VALUES ("nadiaeisa", 5);
 
 INSERT INTO Instruction (recipeID, stepNumber, step)
-VALUES (4, 1, "Add 1 inch of water to a sauce pot, cover, and bring to a boil over high heat."),
-(4, 2, "Once boiling, add an egg (or however many you’d like as long as they are in a single layer in the bottom of the pot), straight from the refrigerator into the pot. Replace the lid and let it continue to boil for exactly six minutes."),
-(4, 3, "After six minutes, remove the egg(s) from the pot and place them in an ice water bath or run under cool water until they are cool enough to handle. Peel, and enjoy!");
+VALUES (5, 1, "Add 1 inch of water to a sauce pot, cover, and bring to a boil over high heat."),
+(5, 2, "Once boiling, add an egg (or however many you’d like as long as they are in a single layer in the bottom of the pot), straight from the refrigerator into the pot. Replace the lid and let it continue to boil for exactly six minutes."),
+(5, 3, "After six minutes, remove the egg(s) from the pot and place them in an ice water bath or run under cool water until they are cool enough to handle. Peel, and enjoy!");
 
 INSERT INTO Ingredient (recipeID, ingredientName, cost)
-VALUES (4, "1 large egg, chilled", 0.41);
+VALUES (5, "1 large egg, chilled", 0.41);
 
 INSERT INTO Category (categoryName)
 VALUES ("Breakfast"); -- categoryID 6 
 
 INSERT INTO Categorized (categoryID, recipeID)
 VALUES
-(6, 4);
+(6, 5);
 
 INSERT INTO Rating (username, recipeID, score)
-VALUES ("nadiaeisa", 4, 1);
+VALUES ("nadiaeisa", 5, 1);
 
 INSERT INTO Photo (photoURL)
 VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/09/Perfect-Soft-Boiled-Eggs-Blue-500x500.jpg")
 
 INSERT INTO Displays (recipeID, photoID)
-VALUES (4, 4);
+VALUES (5, 5);
 
 INSERT INTO Comment (username, recipeID, commentText)
-VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
+VALUES ("nadiaeisa", 5, "Not a fan of eggs.");
+
+-- Insert Sesame Chicken https://www.budgetbytes.com/easy-sesame-chicken/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Sesame Chicken", "This Easy Sesame Chicken recipe is faster and tastier than takeout. Tender chicken coated in a homemade sweet, savory, and tangy sauce.", 25);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("nadiaeisa", 6);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (6, 1, "First, prepare the sauce. In a small bowl stir together the soy sauce, water, sesame oil, brown sugar, rice vinegar, fresh ginger, minced garlic, cornstarch, and sesame seeds. (Grate the ginger with a small-holed cheese grater). Set the sauce aside."),
+(6, 2, "In a large bowl, whisk together the egg, 2 Tbsp cornstarch, and a pinch of salt and pepper. Trim any excess fat from the chicken thighs, then cut them into small 1 inch pieces. Toss the chicken in the egg and cornstarch mixture."),
+(6, 3, "Add the cooking oil to a large skillet and heat it over medium flame. Wait until the skillet is very hot, then swirl the skillet to make sure the oil coats the entire surface. Add the batter coated chicken and spread it out into a single layer over the surface of the skillet."),
+(6, 4, "Allow the chicken pieces to cook, undisturbed, until golden brown on the bottom. Then, carefully flip the chicken, breaking up the pieces into smaller clumps as you flip. Continue to cook the chicken until golden brown on the other side. Stir the chicken as little as possible to avoid breaking the egg coating from the surface of the chicken."),
+(6, 5, "Once the chicken is cooked through and golden brown on all sides, pour the sauce over top. Toss the chicken to coat in the sauce. As the sauce comes up to a simmer, it will begin to thicken. Continue to gently stir the chicken in the sauce until it has thickened, then turn off the heat."),
+(6, 6, "Serve the chicken over a bed of rice and sprinkle the sliced green onions over top.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (6, "1 large egg", 0.23),
+(6, "2 1/2 Tbsp cornstarch", 0.06),
+(6, "1 pinch each salt and pepper", 0.05),
+(6, "1 lb boneless skinless chicken thighs", 3.23),
+(6, "2 Tbsp cooking oil", 0.08),
+(6, "1/4 cup soy sauce", 0.24),
+(6, "2 Tbsp water ", 0.00),
+(6, "1 Tbsp toasted sesame oil ", 0.33),
+(6, "3 Tbsp brown sugar", 0.12),
+(6, "1 Tbsp rice vinegar", 0.12),
+(6, "1 tsp grated fresh ginger", 0.10),
+(6, "2 cloves garlic, minced", 0.16),
+(6, "1 Tbsp sesame seeds", 0.80),
+(6, "4 cups cooked jasmine rice", 0.70),
+(6, "2 whole green onions", 0.22);
+
+INSERT INTO Category (categoryName)
+VALUES ("Lunch"),
+("Salad"),
+("Side Dishes"),
+("Healthy Options");
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (5, 6);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("nadiaeisa", 6, 3);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/07/Easy-Sesame-Chicken-finished-1200-500x500.jpg")
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (6, 6);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("nadiaeisa", 6, "I'm more of a general tso's girl, but still pretty good");
