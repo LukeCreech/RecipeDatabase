@@ -279,7 +279,6 @@ INSERT INTO Displays (recipeID, photoID)
 VALUES (5, 4);
 
 INSERT INTO Comment (username, recipeID, commentText)
-<<<<<<< HEAD
 VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
 
 -- Insert Fluffy Homemade Pancakes https://www.budgetbytes.com/homemade-pancakes/
@@ -478,7 +477,6 @@ VALUES (20, 20);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("grantcostello", 20, "Yay Puddin'");
-=======
 VALUES ("nadiaeisa", 5, "Not a fan of eggs.");
 
 -- Insert Sesame Chicken https://www.budgetbytes.com/easy-sesame-chicken/
@@ -755,4 +753,3 @@ VALUES (11, 10);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("lukecreech", 11, "Great recipe that I added to my rotation, I had never tried this before.");
->>>>>>> 9469a622d164d04e2d165f0454f3d4fa92201b2d
