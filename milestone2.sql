@@ -471,7 +471,7 @@ VALUES (9, 8);
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 9, "I LOVE oatmeal raisin cookies! This recipe is saving me so much money and time by showing me how to do it myself!");
 
--- Insert Chicken Nuggets
+-- Insert Chicken Nuggets https://www.budgetbytes.com/air-fryer-chicken-nuggets/
 INSERT INTO Recipe (recipeName, descr, cookTime)
 VALUES ("Chicken Nuggets", "These Air Fryer Chicken Nuggets are tender, juicy, easy to make, and perfect with your favorite dipping sauce!", 23);
 
@@ -515,3 +515,43 @@ VALUES (10, 9);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("lukecreech", 10, "Chicken nuggets are one of my favorite foods and this was so easy to make!");
+
+-- Insert Garlic Noodles https://www.budgetbytes.com/garlic-noodles/
+
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Garlic Noodles", "Garlic Noodles are sweet, rich, and savory with a strong garlic punch. They make the perfect side dish to any Asian inspired meal.", 25);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("lukecreech", 11);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (11, 1, "Add the oyster sauce, brown sugar, soy sauce and sesame oil to a bowl and stir until combined."),
+(11, 2, "Bring a large pot of water to a boil and cook the noodles according to the package directions (boil for 7-10 minutes). Drain the cooked noodles in a colander, then set aside."),
+(11, 3, "While the pasta cooks, mince the garlic and slice the green onions. Melt the butter in a large skillet over medium-low heat. Once the butter is melted and bubbly, add the garlic and onions (save a few for garnish) and sauté until they are soft and fragrant (1-2 minutes)."),
+(11, 4, "Remove the skillet from the heat. Add the drained pasta and oyster sauce mixture to the skillet, and stir well to coat the pasta. If your pasta is stiff or sticky making it hard to stir, sprinkle a small amount of hot water over the pasta to loosen it up. Garnish the pasta with any reserved sliced green onions, then serve.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (11, "8 oz angel hair pasta", 0.54),
+(11, "4 cloves garlic", 0.24),
+(11, "1/2 bunch green onions", 035),
+(11, "4 Tbsp butter ", 0.50),
+(11, "2 tsp soy sauce", 0.20),
+(11, "2 Tbsp brown sugar", 0.05),
+(11, "1 tsp sesame oil ", 0.40),
+(11, "2 Tbsp oyster sauce", 0.26);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (1, 11),
+(5, 11);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("lukecreech", 10, 4.2);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2009/12/Garlic-Noodles-front.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (11, 10);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("lukecreech", 11, "Great recipe that I added to my rotation, I had never tried this before.");
