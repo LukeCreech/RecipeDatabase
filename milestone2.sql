@@ -373,7 +373,7 @@ VALUES ("ashleyrommel", 12, "This is the perfect chocolate chip cookie recipe!")
 
 -- Insert PESTO CHICKEN AND BROCCOLI SALAD https://www.budgetbytes.com/pesto-chicken-and-broccoli-salad/
 INSERT INTO Recipe (recipeName, descr, cookTime)
-VALUES ("PESTO CHICKEN AND BROCCOLI SALAD", "Chicken, broccoli, onion, and a creamy pesto dressing make this quick salad a delicious new lunchtime staple!", 15);
+VALUES ("Pesto Chicken and Broccoli Salad", "Chicken, broccoli, onion, and a creamy pesto dressing make this quick salad a delicious new lunchtime staple!", 15);
 
 INSERT INTO Creates (username, recipeID)
 VALUES ("ashleyrommel", 13);
@@ -413,7 +413,7 @@ VALUES ("ashleyrommel", 13, "This is such an easy and yummy lunch!");
 
 -- Insert CHILI ROASTED SWEET POTATOES https://budgetbytes.com/chili-roasted-sweet-potatoes/
 INSERT INTO Recipe (recipeName, descr, cookTime)
-VALUES ("CHILI ROASTED SWEET POTATOES", "Chili Roasted Sweet Potatoes are an easy and flavorful side dish for any southwest inspired meal. Perfect for busy weeknights and meal prep!", 55);
+VALUES ("Chili Roasted Sweet Potatoes", "Chili Roasted Sweet Potatoes are an easy and flavorful side dish for any southwest inspired meal. Perfect for busy weeknights and meal prep!", 55);
 
 INSERT INTO Creates (username, recipeID)
 VALUES ("ashleyrommel", 14);
@@ -447,7 +447,7 @@ VALUES ("ashleyrommel", 14, "If you like spicy you'll like this!");
 
 -- Insert ROASTED BROCCOLI PASTA WITH LEMON AND FETA https://www.budgetbytes.com/roasted-broccoli-pasta-with-lemon-and-feta/
 INSERT INTO Recipe (recipeName, descr, cookTime)
-VALUES ("ROASTED BROCCOLI PASTA WITH LEMON AND FETA", "Roasted Broccoli Pasta with Lemon and Feta is an incredibly simple pasta dish with big flavors. An easy, fast, and delicious weeknight dinner!", 40);
+VALUES ("Roasted Broccoli Pasta With Lemon and Feta", "Roasted Broccoli Pasta with Lemon and Feta is an incredibly simple pasta dish with big flavors. An easy, fast, and delicious weeknight dinner!", 40);
 
 INSERT INTO Creates (username, recipeID)
 VALUES ("ashleyrommel", 15);
