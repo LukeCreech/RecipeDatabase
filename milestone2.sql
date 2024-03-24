@@ -369,7 +369,7 @@ VALUES (7, 6);
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 7, "A little untraditional, but surprisingly decent");
 
--- Insert Creamy Cajun Chicken Pasta https://www.budgetbytes.com/caesar-salad/
+-- Insert Creamy Cajun Chicken Pasta https://www.budgetbytes.com/one-pot-creamy-cajun-chicken-pasta/
 INSERT INTO Recipe (recipeName, descr, cookTime)
 VALUES ("Creamy Cajun Chicken Pasta", "Cook a complete dinner in one pot with this Creamy Cajun Chicken Pasta, using mostly pantry-stable items. Perfect for busy weeknights!", 30);
 
@@ -420,3 +420,53 @@ VALUES (8, 7);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 8, "This combined all my favorite things! Def recommend!!");
+
+-- Insert Oatmeal Raisin Cookies https://www.budgetbytes.com/oatmeal-cookies/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Oatmeal Raisin Cookies", "These delicious Oatmeal Cookies are crispy around the edges and soft & chewy in the center. The perfect way to satisfy your sweet tooth!", 28);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("nadiaeisa", 9);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (9, 1, "Preheat the oven to 350°F. In a large mixing bowl, add the softened butter, white sugar, and brown sugar. Blend the ingredients together with a hand mixer until smooth."),
+(9, 2, "Add the egg and vanilla extract to the bowl and blend with the sugar mixture until smooth."),
+(9, 3, "Next in a separate bowl, whisk together the dry ingredients (flour, salt, baking soda, and cinnamon) until well combined. Add the rolled oats to the dry ingredients and mix until combined."),
+(9, 4, "Add all of the dry ingredients to the same bowl as the sugar mixture. Blend the ingredients together with a hand mixer on low speed until just combined. Do not overmix."),
+(9, 5, "Next add the raisins to the bowl and fold them into the cookie dough with a spatula."),
+(9, 6, "Using a medium cookie scoop or your hands, scoop the cookie dough into roughly 2 Tbsp portions then roll into a ball. Place the cookies on a parchment lined baking sheet about 2-3 inches apart. You'll likely need to cook the cookies in two batches, so keep the remaining dough chilled until ready to roll and bake."),,
+(9, 7, "Bake the cookies for 13-14 minutes or until lightly golden brown. The center of the cookies may look too soft when you remove them from the oven, but keep in mind the cookies will continue to set as they cool. Let the cookies cool slightly on the baking sheet before transferring to a wire rack to cool completely. Enjoy!");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (9, "10 Tbsp salted butter, softened ", 1.33),
+(9, "1/2 cup granulated white sugar", 0.17),
+(9, "1/2 cup brown sugar", 0.27),
+(9, "1 egg", 0.14),
+(9, "1 tsp vanilla extract", 0.25),
+(9, "1 cup all-purpose flour", 0.20),
+(9, "1/2 tsp salt", 0.02),
+(9, "1/2 tsp baking soda", 0.02),
+(9, "1/2 tsp cinnamon", 0.05),
+(9, "1 1/2 cups old-fashioned rolled oats", 0.39),
+(9, "3/4 cup raisins", 0.93);
+
+INSERT INTO Category (categoryName)
+VALUES ("Desserts"); -- categoryID 7
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (7, 9);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("nadiaeisa", 9, 5);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (1, "nadiaeisa");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/01/Oatmeal-Cookies-Plated-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (9, 8);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("nadiaeisa", 9, "I LOVE oatmeal raisin cookies! This recipe is saving me so much money and time by showing me how to do it myself!");
