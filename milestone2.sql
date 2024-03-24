@@ -280,3 +280,210 @@ VALUES (4, 4);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
+
+-- Insert Healthy French Toast https://beatthebudget.com/recipe/cinnamon-french-toast-with-mixed-berries/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Healthy French Toast", "This healthy French toast is infused with cinnamon and whipped up in 15 minutes and topped juicy berries.", 15);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("ashleyrommel", 11);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (11, 1, "If possible, leave the slices of bread on a baking tray, uncovered, overnight to dry out before cooking."),
+(11, 2, "Set the frozen mixed berries aside to defrost. Combine the eggs, skimmed milk, vanilla extract, honey and cinnamon in a bowl with a whisk."),
+(11, 3, "Add a ½ a tbsp of olive oil into a large non-stick frying pan on a medium heat. One by one, dunk the stale pieces of bread into skimmed milk/egg mix and transfer into the frying pan, frying 2 pieces at a time."),
+(11, 4, "After around 3 minutes, or until golden brown, rotate and repeat the frying process on the other side. Transfer to the oven whilst completing dunking/frying the rest of the pieces of bread. For each two pieces of bread, use around ½ a tbsp of olive oil for frying."),
+(11, 5, "Serve the french toast with a dollop of Greek yogurt, a handful of mixed berries, a squeeze of honey and an extra sprinkle of cinnamon.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (11, "100 g frozen mixed berries", 1.09),
+(11, "3 eggs", 0.47),
+(11, "1/2 cup skimmed milk", 0.65),
+(11, "8 thick slices of whole wheat bread", 0.63),
+(11, "4 tbsp 0% fat Greek yogurt", 0.92),
+(11, "2 tbsp honey", 0.38),
+(11, "1 tsp cinnamon ", 0.08),
+(11, "2 tbsp olive oil", 0.79);
+(11, "1 tsp vanilla extract", 0.17);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (4, 11),
+(6, 11);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("ashleyrommel", 11, 4.8);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://beatthebudget.com/wp-content/uploads/2022/03/Healthy-French-Toast-with-Cinnamon-Photo-1-1200-px-by-1800-px.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (11, 11);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("ashleyrommel", 11, "This is a fun and easy breakfast that is different than pancakes!");
+
+-- Insert Chocolate Chip Cookies https://www.budgetbytes.com/chocolate-chip-cookies/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Chocolate Chip Cookies", "This easy chocolate chip cookie recipe makes deliciously chewy cookies with crispy edges and melty semi-sweet chocolate chips throughout.", 45);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("ashleyrommel", 12);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (12, 1, "Melt the butter over medium heat in a light-colored pan, stirring often, until the solids separate and turn golden brown and you can smell a nutty aroma. Place the brown butter in a large bowl and transfer it to the refrigerator or freezer until it hardens."),
+(12, 2, "Once the butter has hardened, break it into pieces, and add the white and brown sugar to the bowl. Use a hand mixer to cream the butter and the sugars on low speed until incorporated."),
+(12, 3, "Add the vanilla extract and one egg to the bowl. Mix on low speed until incorporated. Scrape down the sides of the bowl and add the second egg. Mix on low speed until combined, scraping down the sides of the bowl as needed."),
+(12, 4, "In a separate bowl, combine the all-purpose flour and baking soda."),
+(12, 5, "Pour half of the flour mixture into the creamed butter mixture and mix on low speed until combined. Scrape down the sides of the bowl, add in the remaining flour, and mix on low speed until a dough forms. Fold in the chocolate chips until evenly combined."),
+(12, 6, "Divide and roll the dough into balls about 2 Tbsp in size. Place the dough balls on a sheet pan lined with parchment paper about two inches apart. Chill the dough in your refrigerator, uncovered, for at least an hour, but preferably overnight."),
+(12, 7, "When ready to bake, preheat the oven to 350°F. Press the chilled cookie dough balls down with two fingers to flatten slightly."),
+(12, 8, "Bake the cookies for 4 minutes, rotate the sheet pan front to back, then bake for an additional 4 minutes, or until the edges are a light golden brown. Let the cookies cool on the sheet pan for at least 5 minutes before transferring to a cooling rack to finish cooling.");
+
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (12, "12 Tbsp salted butter", 1.50),
+(12, "1/2 cup brown sugar", 0.22),
+(12, "1/4 cup granulated white sugar", 0.08),
+(12, "1 tsp vanilla extract", 0.57),
+(12, "2 large eggs", 0.42),
+(12, "1 1/2 cups all-purpose flour", 0.18),
+(12, "1/2 tsp baking soda", 0.03),
+(12, "1 cup semi-sweet chocolate chips", 1.58);
+
+INSERT INTO Category(categoryName)
+VALUES ("Dessert");
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (7, 12);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("ashleyrommel", 12, 5);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (12, "ashleyrommel");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2022/12/Chocolate-Chip-Cookies-side-2-800x600.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (12, 12);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("ashleyrommel", 12, "This is the perfect chocolate chip cookie recipe!");
+
+-- Insert PESTO CHICKEN AND BROCCOLI SALAD https://www.budgetbytes.com/pesto-chicken-and-broccoli-salad/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("PESTO CHICKEN AND BROCCOLI SALAD", "Chicken, broccoli, onion, and a creamy pesto dressing make this quick salad a delicious new lunchtime staple!", 15);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("ashleyrommel", 13);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (13, 1, "Chop the chicken and broccoli into small, bite-sized pieces. Finely dice the red onion."),
+(13, 2, "In a bowl, stir together the pesto, mayonnaise, and lemon juice."),
+(13, 3, "Add the chicken, broccoli, and red onion to a large bowl. Pour the creamy pesto over top, and add the freshly cracked pepper. Stir to combine."),
+(13, 4, "Taste the salad and add salt or pepper to your liking. Serve immediately or refrigerate until ready to eat.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (13, "1 cup chopped cooked chicken", 3.50),
+(13, "1 lb. fresh broccoli (about 2 cups chopped)", 1.25),
+(13, "1/4 cup chopped red onion", 0.08),
+(13, "1/4 cup basil pesto", 1.00),
+(13, "1/4 cup mayonnaise", 0.29),
+(13, "1 Tbsp lemon juice", 0.04),
+(13, "1/4 tsp freshly cracked black pepper", 0.02);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (1, 13);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("ashleyrommel", 13, 5);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (13, "ashleyrommel");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2022/05/Pesto-Chicken-Broccoli-Salad-V2-800x1067.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (13, 13);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("ashleyrommel", 13, "This is such an easy and yummy lunch!");
+
+-- Insert CHILI ROASTED SWEET POTATOES https://budgetbytes.com/chili-roasted-sweet-potatoes/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("CHILI ROASTED SWEET POTATOES", "Chili Roasted Sweet Potatoes are an easy and flavorful side dish for any southwest inspired meal. Perfect for busy weeknights and meal prep!", 55);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("ashleyrommel", 14);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (14, 1, "Preheat the oven to 400ºF. Line a baking sheet with aluminum foil."),
+(14, 2, "Wash and peel the sweet potatoes, then cut them into 1/2 inch cubes. Place the cubed sweet potatoes into a large bowl and drizzle with the olive oil, chili powder, and salt. Toss the potatoes until evenly coated in oil and spices."),
+(14, 3, "Spread the seasoned sweet potatoes out over the prepared baking sheet so they are in a single layer. Roast the potatoes in the preheated oven for 45 minutes, stirring once half way through. After 45 minutes, the sweet potatoes should be soft and slightly browned on the edges. Total cooking time will ultimately depend on the size of your cubes.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (14, "2 lbs. sweet potatoes", 2.08),
+(14, "1 Tbsp chili powder", 0.30),
+(14, "2 Tbsp olive oil", 0.24),
+(14, "1/4 tsp salt (or to taste)", 0.02);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (3, 14),
+(4, 14);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("ashleyrommel", 14, 3.5);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2016/02/Chili-Roasted-Sweet-Potatoes-2-368x276.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (14, 14);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("ashleyrommel", 14, "If you like spicy you'll like this!");
+
+-- Insert ROASTED BROCCOLI PASTA WITH LEMON AND FETA https://www.budgetbytes.com/roasted-broccoli-pasta-with-lemon-and-feta/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("ROASTED BROCCOLI PASTA WITH LEMON AND FETA", "Roasted Broccoli Pasta with Lemon and Feta is an incredibly simple pasta dish with big flavors. An easy, fast, and delicious weeknight dinner!", 40);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("ashleyrommel", 15);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (15, 1, "Preheat the oven to 400ºF. Cut the broccoli into small florets. Line a baking sheet with parchment paper, then spread the florets out over the baking sheet. Drizzle the broccoli with olive oil and sprinkle the steak seasoning over top. Toss the broccoli until it is well coated in oil and seasoning."),
+(15, 2, "Roast the broccoli for 20-25 minutes, or until it is brown and crispy on the edges."),
+(15, 3, "While the broccoli is roasting, prepare the rest of the dish. Bring a pot of water to boil for the penne. Once boiling, add the pasta, and continue to boil until the pasta is tender (8-10 minutes). Reserve about ½ cup of the starchy pasta water, then drain the pasta in a colander."),
+(15, 4, "While the pasta is boiling, zest a lemon, then cut it into wedges.")
+(15, 5, "Return the drained pasta to the pot (heat turned off). Add the roasted broccoli florets, the butter, about 1 tsp lemon zest, and the juice from two of the lemon wedges. Stir the ingredients together, letting the residual heat from the pasta melt the butter. If the pasta seems too dry, add a splash or two of the reserved pasta water.")
+(15, 6, "Top the pasta with crumbled feta and a pinch or two more steak seasoning, if desired. Serve with extra lemon wedges.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (15, "1 lb. broccoli crowns", 1.79),
+(15, "1 Tbsp olive oil", 0.16),
+(15, "1 tsp steak seasoning", 0.10),
+(15, "1 fresh lemon", 0.39),
+(15, "8 oz. whole wheat penne pasta", 0.50),
+(15, "2 Tbsp butter", 0.20),
+(15, "1 oz. crumbled feta", 0.55);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (1, 15),
+(5, 15);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("ashleyrommel", 15, 4.7);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (15, "ashleyrommel");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2020/01/Roasted-Broccoli-Pasta-with-Lemon-and-Feat-bowl-V2.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (15, 15);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("ashleyrommel", 15, "Good way to add vegetables to a pasta dish!");
