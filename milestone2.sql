@@ -149,7 +149,7 @@ INSERT INTO Favorite (recipeID, username)
 VALUES (1, "lukecreech");
 
 INSERT INTO Photo (photoURL)
-VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/03/Caesar-Salad-Overhead-800x600.jpg")
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/03/Caesar-Salad-Overhead-800x600.jpg");
 
 INSERT INTO Displays (recipeID, photoID)
 VALUES (1, 1);
