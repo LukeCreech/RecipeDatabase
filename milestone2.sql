@@ -470,3 +470,48 @@ VALUES (9, 8);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 9, "I LOVE oatmeal raisin cookies! This recipe is saving me so much money and time by showing me how to do it myself!");
+
+-- Insert Chicken Nuggets
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Chicken Nuggets", "These Air Fryer Chicken Nuggets are tender, juicy, easy to make, and perfect with your favorite dipping sauce!", 23);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("lukecreech", 10);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (10, 1, "On a cutting board, cut the chicken breast into 3/4 inch pieces. You should get approximately 20-24 chicken nuggets depending on the size of your chicken breast."),
+(10, 2, "Sprinkle ¼ tsp of salt evenly over the chicken pieces. Next sprinkle the flour over the chicken and toss to coat evenly."),
+(10, 3, "In a small bowl add the breadcrumbs, garlic powder, smoked paprika, and ½ tsp salt. Mix seasoning into the breadcrumbs. Next add the cooking oil to the breadcrumbs and stir until the oil is evenly coating the breadcrumbs. It should look like damp sand."),
+(10, 4, "In another small bowl add ½ cup buttermilk."),
+(10, 5, "Now line up the chicken, buttermilk, and breadcrumbs. Using tongs or your hands, begin to coat the chicken nugget pieces by first dipping them in the buttermilk, then transfer them to the breadcrumbs and coat them evenly with the breadcrumbs. Set the coated chicken pieces to the side."),
+(10, 6, "Preheat the air fryer to 400°F. Once preheated, place the chicken nuggets in the air fryer basket in a single layer. Try not to overcrowd the basket. You can cook the chicken nuggets in 2 batches if needed. Air fry for 8 minutes, flipping the nuggets halfway through."),,
+(10, 7, "Remove chicken nuggets from the air fryer and let cool for 3-5 minutes, then serve with your favorite dipping sauce.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (10, "1 boneless, skinless chicken breast (about 2/3 lb.)", 3.50),
+(10, "3/4 tsp salt, divided", 0.05),
+(10, "1 Tbsp all-purpose flour", 0.02),
+(10, "1/2 cup buttermilk", 0.24),
+(10, "1 cup plain breadcrumbs", 0.60),
+(10, "1 tsp garlic powder", 0.10),
+(10, "1/2 tsp smoked paprika", 0.05),
+(10, "2 Tbsp cooking oil", 0.08);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (1, 10),
+(5, 10);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("lukecreech", 10, 5);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (10, "lukecreech");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2023/08/Air-Fryer-Chicken-Nuggets-close-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (10, 9);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("lukecreech", 10, "Chicken nuggets are one of my favorite foods and this was so easy to make!");
