@@ -201,3 +201,48 @@ VALUES (2, 2);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("lukecreech", 2, "Love this Mac and Cheese, it is so cheap!");
+
+-- Insert PARMESAN RISOTTO https://www.budgetbytes.com/parmesan-risotto/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Parmesan Risotto", "Creamy Parmesan risotto is comfort food at its finest! Warm, rich, and cheesy, this dish is a perennial favorite.", 40);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("lukecreech", 3);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (3, 1, "Bring the vegetable broth to a simmer in a large saucepan. Keep warm over low heat."),
+(3, 2, "Heat a large deep sauté pan over medium-high heat. Add oil to the pan. Swirl to coat and add your onion and salt. Cook for 5 minutes, stirring occasionally until onions look glossy and clear. Your onions should not caramelize or brown for this recipe."),
+(3, 3, "Add the Arborio rice to the pan and stir to combine. Toast the onion and rice together for about 1 minute, stirring constantly."),
+(3, 4, "Deglaze your pan with room temperature white wine and let it cook down until there’s just a little left in the pan, about ½ or less of what you poured in."),
+(3, 5, "Now, begin adding 1 ladle of hot broth at a time, stirring the risotto constantly until the broth is about 75% absorbed by the arborio rice. I find it usually takes a solid minute or two before I add another ladle of broth. Add another ladle until your entire supply of hot stock has been used up. This step takes approximately 20 minutes total. Once you have used up all of your broth and your Arborio rice is al dente and creamy, remove pot from heat."),
+(3, 6, "Stir in butter, pepper, and cheese. Taste and adjust salt, if needed, and finish with the parsley.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (3, "4 1/2 cups vegetable broth", 0.36),
+(3, "2 Tbsp extra-virgin olive oil", 0.34),
+(3, "1 small yellow onion, diced small", 0.78),
+(3, "1/4 tsp salt", 0.02),
+(3, "1 1/2 cups Arborio rice, uncooked and unrinsed", 2.62),
+(3, "1/2 cup dry white wine or vegetable broth", 1.04),
+(3, "1 Tbsp butter", 0.13),
+(3, "1/2 tsp freshly cracked black pepper", 0.03),
+(3, "1/2 cup grated Parmesan", 2.57),
+(3, "1 Tbsp minced fresh parsley", 0.08);
+
+INSERT INTO Category (categoryName)
+VALUES ("Dinner"); -- category ID 5
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (5, 3);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("lukecreech", 2, 3.9);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/03/Parmesan-Risotto-Plated-768x576.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (3, 3);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("lukecreech", 3, "This is a very unique dish! It really surpised me");
