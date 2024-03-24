@@ -246,3 +246,37 @@ VALUES (3, 3);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("lukecreech", 3, "This is a very unique dish! It really surpised me");
+
+-- Insert Soft Boiled Eggs https://www.budgetbytes.com/make-soft-boiled-eggs/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Soft Boiled Eggs", "Perfect soft boiled eggs with firm whites and liquid gold centers are only six minutes away. Use this easy step by step guide for perfect eggs every time.", 10);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("nadiaeisa", 4);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (4, 1, "Add 1 inch of water to a sauce pot, cover, and bring to a boil over high heat."),
+(4, 2, "Once boiling, add an egg (or however many you’d like as long as they are in a single layer in the bottom of the pot), straight from the refrigerator into the pot. Replace the lid and let it continue to boil for exactly six minutes."),
+(4, 3, "After six minutes, remove the egg(s) from the pot and place them in an ice water bath or run under cool water until they are cool enough to handle. Peel, and enjoy!");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (4, "1 large egg, chilled", 0.41);
+
+INSERT INTO Category (categoryName)
+VALUES ("Breakfast"); -- categoryID 6 
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(6, 4);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("nadiaeisa", 4, 1);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/09/Perfect-Soft-Boiled-Eggs-Blue-500x500.jpg")
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (4, 4);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
