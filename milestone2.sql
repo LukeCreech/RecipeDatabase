@@ -369,3 +369,54 @@ VALUES (7, 6);
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 7, "A little untraditional, but surprisingly decent");
 
+-- Insert Creamy Cajun Chicken Pasta https://www.budgetbytes.com/caesar-salad/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Creamy Cajun Chicken Pasta", "Cook a complete dinner in one pot with this Creamy Cajun Chicken Pasta, using mostly pantry-stable items. Perfect for busy weeknights!", 30);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("nadiaeisa", 8);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (8, 1, "Combine the ingredients for the Cajun seasoning in a small bowl. Cut the chicken into 1/2 to 3/4-inch cubes. Place the cubed chicken in a bowl, pour the Cajun seasoning over top, and stir to coat the chicken in spices."),
+(8, 2, "Add the olive oil and butter to a large deep skillet. Heat the oil and butter over medium-high until the skillet is very hot and the butter is melted and foamy. Add the seasoned chicken to the skillet and cook for a couple minutes on each side, or just until the outside gets some color. The chicken does not need to be cooked through at this point."),
+(8, 3, "Add the diced yellow onion to the skillet and continue to sauté for about 2 minutes more, or just until the onion begins to soften. Allow the moisture from the onion to dissolve any browned bits from the bottom of the skillet."),
+(8, 4, "Next, add the pasta, fire roasted diced tomatoes (with the juices), and chicken broth to the skillet. Stir just until everything is evenly combined, then place a lid on top and allow the broth to come up to a boil."),
+(8, 5, "Once boiling, turn the heat down to medium-low and let the pasta simmer for about ten minutes, stirring every couple of minutes, until the pasta is tender and the liquid is thick and saucy."),
+(8, 4, "Add the cream cheese to the skillet in chunks, then stir until it has melted into the sauce. Top the pasta with sliced green onions and serve.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (8 "2 tsp smoked paprika", 0.20),
+(8, "1 tsp oregano", 0.10),
+(8, "1 tsp thyme", 0.10),
+(8, "1/2 tsp garlic powder", 0.05),
+(8, "1/2 tsp onion powder", 0.05),
+(8, "1/4 tsp cayenne pepper", 0.03),
+(8, "1/4 tsp black pepper", 0.02),
+(8, "1/4 tsp salt", 0.02),
+(8, "1 Tbsp olive oil", 0.16),
+(8, "1 Tbsp butter", 0.13),
+(8, "1 lb. boneless, skinless chicken breast", 5.47),
+(8, "1 yellow onion, diced", 0.32),
+(8, "1/2 lb. penne pasta (uncooked)", 0.75),
+(8, "15 oz. fire roasted diced tomatoes", 1.00),
+(8, "2 cups chicken broth", 0.26),
+(8, "2 oz. cream cheese", 0.50),
+(8, "3 green onions, sliced", 0.25),;
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (5, 8);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("nadiaeisa", 8, 5);
+
+INSERT INTO Favorite (recipeID, username)
+VALUES (1, "nadiaeisa");
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/10/One-Pot-Creamy-Cajun-Chicken-Pasta-pan-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (8, 7);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("nadiaeisa", 8, "This combined all my favorite things! Def recommend!!");
