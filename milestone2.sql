@@ -279,6 +279,206 @@ INSERT INTO Displays (recipeID, photoID)
 VALUES (5, 4);
 
 INSERT INTO Comment (username, recipeID, commentText)
+<<<<<<< HEAD
+VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
+
+-- Insert Fluffy Homemade Pancakes https://www.budgetbytes.com/homemade-pancakes/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Fluffy Homemade Pancakes", "This easy homemade pancake recipe makes the most delicious and fluffy stack of pancakes around! Perfect for a cozy weekend breakfast.", 30);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("grantcostello", 16);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (16, 1, "Whisk together the flour, baking powder, and salt in a bowl."),
+(16, 2, "In a separate bowl, whisk together the milk, egg, melted butter, sugar, and vanilla extract."),
+(16, 3, "Pour the bowl of wet ingredients into the bowl of dry ingredients and stir just until combined. DO NOT overmix. The mixture should be thick, but still pourable, and a little bit lumpy. If it's not pourable, add an additional tablespoon or two of milk until it is thick, but pourable. Let the batter rest for 15 minutes."),
+(16, 4, "Heat a large skillet or griddle over medium. Once hot add enough cooking oil to coat the surface (I use about ½ tsp per pancake). Add the pancake batter to the hot griddle, ¼ cup at a time. Use the back of the measuring cup to spread the batter into a 4.5-inch diameter circle."),
+(16, 5, "Cook the pancakes until bubbles form over the surface and begin to pop, the edges of the pancakes look dry, and the bottom is golden brown (about 60 seconds). Flip the pancakes and cook on the second side until golden brown (about 30 seconds)."),
+(16, 6, "Repeat with the remaining batter, adding more oil to the skillet between batches or as needed, until all of the pancakes have been cooked. Keep the pancakes warm on a plate under a towel or in a warm oven until all of the pancakes have been cooked. Serve warm with your favorite toppings!");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (16, "1 cup all-purpose flour", 0.07),
+VALUES (16, "1.5 tsp baking powder", 0.03),
+VALUES (16, "1/2 tsp salt", 0.03),
+VALUES (16, "3/4 cup warm milk", 0.02),
+VALUES (16, "2 Tbsp melted butter", 0.20),
+VALUES (16, "1 large egg", 0.21),
+VALUES (16, "2 Tbsp sugar", 0.02),
+VALUES (16, "1/2 tsp vanilla extract", 0.14),
+VALUES (16, "4 tsp cooking oil", 0.05);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(6, 16);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("grantcostello", 16, 5);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2022/04/Homemade-Pancakes-fork-side-500x500.jpg")
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (16, 16);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("grantcostello", 16, "Yummy!!!!! :)");
+
+-- Insert 5 Ingredient Freezer Biscuits https://www.budgetbytes.com/5-ingredient-freezer-biscuits/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("5 Ingredient Freezer Biscuits", "5 Ingredient Freezer Biscuits are the fastest and easiest way to have fresh, warm, and fluffy biscuits for breakfast any day of the week.", 32);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("grantcostello", 17);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (17, 1, "In a large bowl, stir together the flour, salt, sugar, and baking powder until well combined."),
+(17, 2, "Pour in the heavy cream and stir until a sticky ball of dough forms. Sprinkle the dough generously with flour and then turn the dough out onto a floured surface. Gently knead the dough 2-3 times, or just until the dough feels mixed and has enough flour that it is no longer sticky. Avoid over working the dough."),
+(17, 3, "Gently pat the dough down into a 6×8 rectangle, then fold it in half. Repeat this two more times. Folding the dough in this manner helps create layers within the biscuits."),
+(17, 4, "After folding, pat the dough down into a 6×8 rectangle one final time. The dough should be about one inch thick. Cut the dough into 12 squares."),
+(17, 5, "Line a baking sheet with parchment, then place the cut biscuits on the parchment, separated just slightly. Cover with plastic wrap and freeze the biscuits for a couple of hours, or just until solid. Label and date a gallon-sized freezer bag. Place the frozen biscuits in the bag for long term storage (3-4 months)."),
+(17, 6, "To bake the biscuits, place any number of biscuits you want on a baking sheet lined with parchment. Let the biscuits thaw only as long as it takes to preheat the oven to 400ºF. Once the oven is preheated, bake the biscuits until puffed up tall and deep golden brown on top. Depending on your oven and size of the biscuits, it should take about 18-22 minutes (frozen), or 16-20 minutes (fresh).");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (17, "2.5 cups all-purpose flour (plus some for dusting)", 0.26),
+VALUES (17, "1 tsp salt", 0.05),
+VALUES (17, "1 Tbsp sugar", 0.02),
+VALUES (17, "4 tsp baking powder", 0.16),
+VALUES (17, "1 pint heavy whipping cream", 3.65);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(6, 17),
+(3, 17);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("grantcostello", 17, 2);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2016/10/Freezer-Biscuits-brush-butter-1-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (17, 17);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("grantcostello", 17, "You should cut them into circles");
+
+-- Insert Lemon Garlic Roasted Chicken https://www.budgetbytes.com/lemon-garlic-roasted-chicken/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Lemon Garlic Roasted Chicken", "This low and slow cooking method makes this Lemon Garlic Roasted Chicken incredibly tender, juicy, and flavorful!", 130);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("grantcostello", 18);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (18, 1, "Preheat the oven to 275ºF. Squeeze about 3 Tbsp lemon juice from the lemon(s) and slice the remainder. Mince two cloves of the garlic, and peel the remaining 4. In a small bowl, whisk together the lemon juice, olive oil, minced garlic, salt, and pepper."),
+(18, 2, "Pat the chicken breasts dry with a paper towel. Place them in a glass or ceramic casserole dish. Pour the prepared lemon marinade over the chicken, using a spoon to redistribute the marinade and make sure the surface of the chicken is fully covered. Add the remaining cloves of peeled garlic and sliced lemon around the chicken. If you’re sensitive to bitter flavors, add the additional lemon slices after baking. Cover the dish tightly with foil."),
+(18, 3, "Roast the chicken in the preheated oven for 90 minutes. After 90 minutes, turn the oven up to 425ºF, remove the foil, and baste the chicken with the juices from the bottom of the dish. Return the chicken to the oven and roast for an additional 20 minutes without foil at 425ºF, or until the skin is golden brown and crispy."),
+(18, 4, "Let the chicken rest for 5-10 minutes before slicing. Serve warm with the pan drippings spooned over top.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (18, "2 small or 1 large lemon", 0.30),
+VALUES (18, "1/3 cup olive oil", 0.78),
+VALUES (18, "6 cloves garlic", 0.48),
+VALUES (18, "1/4 tsp salt", 0.02),
+VALUES (18, "Freshly cracked pepper", 0.05),
+VALUES (18, "2 lbs split chicken breasts", 4.77);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(5, 18);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("grantcostello", 18, 3);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2017/03/Drizzle-Juice-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (18, 18);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("grantcostello", 18, "Mmmmmm very tender and juicy");
+
+-- Insert Chocolate Mousse https://www.budgetbytes.com/chocolate-mousse/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Chocolate Mousse", "When it comes to a perfectly luscious and light dessert, it doesn't get much simpler than this deeply flavored easy chocolate mousse. You are four ingredients away from heaven!", 75);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("grantcostello", 19);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (19, 1, "Fill a pot halfway with water and bring it to a boil. Take it off the heat. Place the chocolate in a bowl and place the bowl in the hot water, being careful not to get any water in the bowl. Leave the bowl there until the chocolate melts."),
+(19, 2, "Add the heavy cream to a large mixing bowl and beat on medium speed until soft peaks form."),
+(19, 3, "In a separate large mixing bowl, whip the egg whites on medium speed to soft peaks. Add the sugar and continue beating until stiff peaks form."),
+(19, 4, "Gently fold the egg whites into the chocolate in thirds. Fold until no white streaks remain."),
+(19, 5, "Gently fold the whipped cream into the chocolate in thirds. There should be no white streaks."),
+(19, 6, "Scoop mousse into serving dishes, cover, and refrigerate for an hour. Garnish with sweetened whipped cream, raspberries, mint, or shaved chocolate.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (19, "8 oz dark or semi-sweet chocolate", 2.90),
+VALUES (19, "1 pint heavy whipping cream, very cold", 3.29),
+VALUES (19, "3 egg whites, room temperature", 1.25),
+VALUES (19, "1/2 cup powdered sugar or sugar substitute", 0.13);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(7, 19);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("grantcostello", 19, 5);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2023/02/ChocolateMoussespoonRE-800x600.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (19, 19);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("grantcostello", 19, "Woah");
+
+-- Insert Vanilla Pudding https://www.budgetbytes.com/vanilla-pudding/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Vanilla Pudding", "This homemade vanilla pudding recipe is super rich and creamy, only takes a few simple ingredients, and is so much better than instant mixes!", 20);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("grantcostello", 20);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (20, 1, "Add the sugar and cornstarch to a medium-sized pot. Mix them together and set the pot over medium heat."),
+(20, 2, "Add the milk and stir constantly until it comes to a boil. Continue stirring for 1 minute longer."),
+(20, 3, "The milk should be thick enough to coat the back of wooden spoon. Take the mixture off the heat."),
+(20, 4, "Beat the egg yolks. Whisk one tablespoon of the hot milk into the beaten egg yolks."),
+(20, 5, "Continue to whisk in the milk, tablespoon by tablespoon, until the egg mixture is very warm."),
+(20, 6, "Set the remaining pot of milk over medium heat and whisk in the warmed egg mixture. Bring the pudding to a boil while stirring constantly. Continue stirring for 1 minute longer."),
+(20, 7, "Take the pudding off the heat. Add the vanilla and the butter. Stir until the butter has melted."),
+(20, 8, "Strain the pudding through a fine mesh sieve."),
+(20, 9, "Add the strained pudding to a large bowl. Serve warm or cover with plastic film touching the pudding's surface and store in the refrigerator until the pudding has cooled.");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (20, "1/2 cup sugar", 0.12),
+VALUES (20, "3 Tbsp corn starch", 0.09),
+VALUES (20, "3 cups whole milk", 0.73),
+VALUES (20, "3 large egg yolk", 0.60),
+VALUES (20, "1.5 tsp vanilla extract", 0.87),
+VALUES (20, "3 Tbsp salted butter", 0.38);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES
+(7, 20);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("grantcostello", 20, 5);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2022/08/Vanilla-Pudding-above-500x500.jpg");
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (20, 20);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("grantcostello", 20, "Yay Puddin'");
+=======
 VALUES ("nadiaeisa", 5, "Not a fan of eggs.");
 
 -- Insert Sesame Chicken https://www.budgetbytes.com/easy-sesame-chicken/
@@ -554,4 +754,5 @@ INSERT INTO Displays (recipeID, photoID)
 VALUES (11, 10);
 
 INSERT INTO Comment (username, recipeID, commentText)
-VALUES ("nadiaeisa", 4, "Not a fan of eggs.");
+VALUES ("lukecreech", 11, "Great recipe that I added to my rotation, I had never tried this before.");
+>>>>>>> 9469a622d164d04e2d165f0454f3d4fa92201b2d
