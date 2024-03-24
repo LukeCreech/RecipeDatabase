@@ -276,7 +276,7 @@ INSERT INTO Photo (photoURL)
 VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/09/Perfect-Soft-Boiled-Eggs-Blue-500x500.jpg")
 
 INSERT INTO Displays (recipeID, photoID)
-VALUES (5, 5);
+VALUES (5, 4);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 5, "Not a fan of eggs.");
@@ -313,12 +313,6 @@ VALUES (6, "1 large egg", 0.23),
 (6, "4 cups cooked jasmine rice", 0.70),
 (6, "2 whole green onions", 0.22);
 
-INSERT INTO Category (categoryName)
-VALUES ("Lunch"),
-("Salad"),
-("Side Dishes"),
-("Healthy Options");
-
 INSERT INTO Categorized (categoryID, recipeID)
 VALUES (5, 6);
 
@@ -329,7 +323,49 @@ INSERT INTO Photo (photoURL)
 VALUES ("https://www.budgetbytes.com/wp-content/uploads/2018/07/Easy-Sesame-Chicken-finished-1200-500x500.jpg")
 
 INSERT INTO Displays (recipeID, photoID)
-VALUES (6, 6);
+VALUES (6, 5);
 
 INSERT INTO Comment (username, recipeID, commentText)
 VALUES ("nadiaeisa", 6, "I'm more of a general tso's girl, but still pretty good");
+
+-- Insert Pea Salad https://www.budgetbytes.com/pea-salad/
+INSERT INTO Recipe (recipeName, descr, cookTime)
+VALUES ("Pea Salad", "Super simple and inexpensive, this creamy pea salad is the perfect side dish for your next family get-together.", 10);
+
+INSERT INTO Creates (username, recipeID)
+VALUES ("nadiaeisa", 7);
+
+INSERT INTO Instruction (recipeID, stepNumber, step)
+VALUES (7, 1, "Rinse the frozen peas in cool water. Strain and leave out at room temperature. Meanwhile, cut the ham into small dice cubes and prep the red onion, cheddar cheese, and parsley."),
+(7, 2, "n a small mixing bowl, whisk together Greek yogurt, mayonnaise, white vinegar, minced parsley, and salt and pepper."),
+(7, 3, "Toss all ingredients together in a large bowl. Serve immediately or enjoy all week!");
+
+INSERT INTO Ingredient (recipeID, ingredientName, cost)
+VALUES (7, "4 cups frozen peas", 2.28),
+(7, "2 cups cubed ham steak", 3.99),
+(7, "1/2 small red onion, diced small", 0.22),
+(7, "8 oz. cheddar cheese, cubed small", 2.49),
+(7, "1 Tbsp minced parsley", 0.05),
+(7, "1/3 cup plain Greek yogurt", 0.32),
+(7, "1 Tbsp mayonnaise", 0.07),
+(7, "1 Tbsp white vinega", 0.02),
+(7, "1 tsp salt", 0.05),
+(7, "1 tsp freshly cracked black pepper", 0.05);
+
+INSERT INTO Categorized (categoryID, recipeID)
+VALUES (2, 7),
+(3, 7),
+(4, 7);
+
+INSERT INTO Rating (username, recipeID, score)
+VALUES ("nadiaeisa", 7, 2);
+
+INSERT INTO Photo (photoURL)
+VALUES ("https://www.budgetbytes.com/wp-content/uploads/2024/03/Pea-Salad-Spoon-500x500.jpg")
+
+INSERT INTO Displays (recipeID, photoID)
+VALUES (7, 6);
+
+INSERT INTO Comment (username, recipeID, commentText)
+VALUES ("nadiaeisa", 7, "A little untraditional, but surprisingly decent");
+
