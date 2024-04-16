@@ -1,17 +1,24 @@
 
-
-
+<?php
+require ("main-db.php");
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>Budget Recipe Database</title>
 </head>
 <body>
 
-<h1>Hello, World</h1>
-<p>Hello, World</p>
+<h1>User Login</h1>
+<form action="login.php" method="post">     
+      Username: <input type="text" name="name" required /> <br/>
+      Password: <input type="password" name="pwd" required /> <br/>
+      <input type="submit" value="Submit" class="btn" />
+    </form>
 
 </body>
 </html>
