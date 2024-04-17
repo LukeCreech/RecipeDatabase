@@ -1,3 +1,8 @@
+<?php
+require ("connect-database.php");
+require ("main-db.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +14,17 @@
 <body>
 
 <h1>User Login</h1>
-<form action="login.php" method="post">     
+<form action="user-login.php" method="post">     
     Username: <input type="text" name="username" required /> <br/>
     Password: <input type="password" name="password" required /> <br/>
     <input type="submit" value="Submit" class="btn" />
 </form>
+<button onclick="window.location.href='signup.php'">Create Account</button>
 
 <?php
+
+$homepage = "homepage.php";
+
 function login()
 {
     global $homepage;
@@ -32,15 +41,11 @@ function login()
             exit;
         }
         else
-            echo "<span class='msg'>Incorrect login information.</span> <br/>"
+            echo "<span class='msg'>Incorrect login information.</span> <br/>";
     }
 }
-function get_password($username)
-{
 
-}
 
-$homepage = "homepage.php"
 login();
 ?>
 

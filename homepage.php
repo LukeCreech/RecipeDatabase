@@ -11,3 +11,8 @@ require ("main-db.php");
     <title>Budget Recipe Database</title>
 </head>
 <body>
+
+<p> Hello, World </p>
+
+</body>
+</html>
