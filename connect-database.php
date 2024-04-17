@@ -1,8 +1,13 @@
 <?php
-$username = 'lmc3axn'; 
-$password = 'Hawaii08!';
-$host = 'mysql01.cs.virginia.edu';
-$dbname = 'lmc3axn_b';
+
+# used the following link for help on setting up a .env file https://stackoverflow.com/questions/67963371/load-a-env-file-with-php
+
+$env = parse_ini_file('.env');
+
+$username = $env["database_username"]; 
+$password = $env["database_password"];
+$host = $env["database_host"];
+$dbname = $env["database_name"];
 $dsn = "mysql:host=$host;dbname=$dbname";
 
 try 
