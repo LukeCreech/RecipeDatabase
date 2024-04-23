@@ -20,6 +20,10 @@ if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
 }
 ?>
 
+<?php
+require ('navbar.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
