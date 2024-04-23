@@ -2,6 +2,24 @@
 require ("main-db.php");
 ?>
 
+<?php
+session_start();
+
+$loginpage = "user-login.php";
+
+if(session_status() === PHP_SESSION_NONE)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+
+if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +31,7 @@ require ("main-db.php");
 <body>
 
 <p> Hello, World </p>
+<button onclick="window.location.href='logout.php'">Logout</button>
 
 </body>
 </html>

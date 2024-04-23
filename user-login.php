@@ -22,8 +22,15 @@ require ("main-db.php");
 <button onclick="window.location.href='signup.php'">Create Account</button>
 
 <?php
+session_start();
 
 $homepage = "homepage.php";
+
+if(isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true)
+{
+    header("Location: " .$homepage);
+    exit;
+}
 
 function login()
 {
@@ -37,6 +44,8 @@ function login()
         if (password_verify($password, $hash))
         {
             // redirect to mainpage if valid login
+            $_SESSION["authenticated"] = true;
+            $_SESSION["username"] = $username; 
             header("Location: " .$homepage);
             exit;
         }

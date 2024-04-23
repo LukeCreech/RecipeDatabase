@@ -4,6 +4,23 @@ require ("main-db.php");
 ?>
 
 <?php
+session_start();
+
+$homepage = "homepage.php";
+
+$loginpage = "user-login.php";
+
+if(session_status() === PHP_SESSION_NONE)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+
+if(isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true)
+{
+    header("Location: " .$homepage);
+    exit;
+}
 
 function create_account()
 {
@@ -35,7 +52,7 @@ create_account();
     <meta charset="utf-8">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
 <body>
 
