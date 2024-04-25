@@ -28,6 +28,7 @@ require ("main-db.php");
                     <label for="password-field">Password</label>
                     <input type="password" name="password" class="form-control" id="password-field" placeholder="Password" required /> <br/>
                 </div>
+                <div id="bad-login" class="text-danger" style="display: none;">Incorrect login information.</div>
                 <div class="login-buttons">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button onclick="window.location.href='signup.php'" class="btn btn-outline-secondary">Create Account</button>
@@ -66,7 +67,7 @@ function login()
             exit;
         }
         else
-            echo "<span class='msg'>Incorrect login information.</span> <br/>";
+            echo "<script>document.getElementById('bad-login').style.display = 'block';</script>";
     }
 }
 
