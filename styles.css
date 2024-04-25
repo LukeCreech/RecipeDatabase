@@ -7,7 +7,7 @@
     border: 2px solid gray;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
-.login-buttons{
+.login-buttons {
     display: flex;
     justify-content: space-between;
 }
@@ -26,9 +26,4 @@ body {
     background-image: url('images/rotunda\ \(1\).jpg');
     background-size: cover;
     background-position: center;
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }

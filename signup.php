@@ -57,14 +57,30 @@ create_account();
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-
-<h1>Create A New Account</h1>
-<form action="signup.php" method="post">     
-    Username: <input type="text" name="username" required /> <br/>
-    Password: <input type="password" name="password" required /> <br/>
-    Re-enter Password: <input type="password" name="password2" required /> <br/>
-    <input type="submit" value="Submit" class="btn" />
-</form>
+<div class="container d-flex justify-content-center align-items-center vh-75">
+  <div class="card">
+    <div class="card-body">
+        <h1 class="text-center">Create a New Account</h1>
+            <form action="signup.php" method="post">
+                <div class="form-group">
+                    <label for="username-field">Username</label>
+                    <input type="text" name="username" class="form-control" id="username-field" aria-describedby="emailHelp" placeholder="Username" required /> <br/>
+                </div>
+                <div class="form-group">
+                    <label for="password-field">Password</label>
+                    <input type="password" name="password" class="form-control" id="password-field" placeholder="Password" required /> <br/>
+                </div>
+                <div class="form-group">
+                    <label for="password-field">Re-enter Password</label>
+                    <input type="password" name="password2" class="form-control" id="password-field" placeholder="Password" required /> <br/>
+                </div>
+                <div class="login-buttons">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
