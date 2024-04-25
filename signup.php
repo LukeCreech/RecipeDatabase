@@ -76,6 +76,7 @@ create_account();
                 </div>
                 <div class="login-buttons">
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button onclick="window.location.href='user-login.php'" class="btn btn-outline-secondary">Return Home</button>
                 </div>
             </form>
         </div>
