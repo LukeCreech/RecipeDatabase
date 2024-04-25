@@ -1,0 +1,34 @@
+.login-form {
+    margin-top: 100px;
+  }
+.card {
+    width: 600px;
+    margin-top: 150px;
+    border: 2px solid gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+.login-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.form-group label {
+    font-size: 20px;
+}
+.form-control {
+    font-size: 20px;
+    padding: 10px;
+}
+.btn {
+    font-size: 18px;
+    padding: 5px 15px;
+}
+body {
+    background-image: url('images/rotunda\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
