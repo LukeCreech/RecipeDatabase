@@ -56,4 +56,16 @@ function getAllRecipes()
     $statement->closeCursor();
     return $result;
 }
+
+function getCost($recipeID)
+{
+    global $db;
+    $query = "CALL countPrice(:recipeID);";
+    $statement = $db->prepare($query);
+    $statement->bindParam(':recipeID', $recipeID, PDO::PARAM_INT);
+    $statement->execute();
+    $result = $statement->fetchAll();
+    $statement->closeCursor();
+    return $result;
+}
 ?>

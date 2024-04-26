@@ -36,6 +36,7 @@ $list_of_recipes = getAllRecipes();
 </head>
 <body>
 
+
 <div class="container align-items-center justify-content-center">
     <div class="row justify-content-center">
         <div class="card mt-5" style="width: 2000px;">
@@ -50,6 +51,7 @@ $list_of_recipes = getAllRecipes();
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
                     <th scope="col">Cook Time</th>
+                    <th scope="col">Cost</th>
                     <th scope="col">Rating</th>
                     </tr>
                 </thead>
@@ -60,9 +62,20 @@ $list_of_recipes = getAllRecipes();
                             ?>
                             <tr>
                             <th scope="row"><?php echo $row['recipeID']; ?></th>
-                            <td><a href="recipe-details.php?id=<?php echo $row['recipeID']; ?>"><?php echo $row['recipeName']; ?></a></td>
+                            <td><?php echo $row['recipeName']; ?></td>
                             <td><?php echo $row['descr']; ?></td>
                             <td><?php echo $row['cookTime']; ?></td>
+                            <td>
+                                $<?php
+                                    // Fetch cost for each recipe
+                                    $cost_result = getCost($row['recipeID']);
+                                    if (!empty($cost_result)) {
+                                        echo $cost_result[0][0]; // Accessing the total cost from the first row and first column
+                                    } else {
+                                        echo "N/A"; // Display N/A if cost is not available
+                                    }
+                                ?>
+                            </td>
                             <td><?php echo $row['score']; ?></td>
                             <?php
                         }
