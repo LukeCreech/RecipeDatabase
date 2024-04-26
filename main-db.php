@@ -46,10 +46,10 @@ function get_password($username)
     $statement->closeCursor();
     return $result;
 }
-
-function getAllRecipes(){
+function getAllRecipes()
+{
     global $db;
-    $query = "SELECT * FROM recipe";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Rating ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
