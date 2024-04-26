@@ -36,7 +36,6 @@ $list_of_recipes = getAllRecipes();
 </head>
 <body>
 
-
 <div class="container align-items-center justify-content-center">
     <div class="row justify-content-center">
         <div class="card mt-5" style="width: 2000px;">
@@ -61,7 +60,7 @@ $list_of_recipes = getAllRecipes();
                             ?>
                             <tr>
                             <th scope="row"><?php echo $row['recipeID']; ?></th>
-                            <td><?php echo $row['recipeName']; ?></td>
+                            <td><a href="recipe-details.php?id=<?php echo $row['recipeID']; ?>"><?php echo $row['recipeName']; ?></a></td>
                             <td><?php echo $row['descr']; ?></td>
                             <td><?php echo $row['cookTime']; ?></td>
                             <td><?php echo $row['score']; ?></td>
