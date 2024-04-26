@@ -41,7 +41,7 @@ require ('navbar.php');
     <div class="row justify-content-center">
         <div class="card mt-5" style="width: 2000px;">
             <div class="card-header">
-                <h2 class="display-6 text-center">Budget Recipes</h2>
+                <h2 class="display-6 text-center">Recipes</h2>
             </div>
             <div class="card-body">
                 <table class="table" style="width: 100%;">
