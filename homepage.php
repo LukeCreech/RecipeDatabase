@@ -42,9 +42,18 @@ $list_of_recipes = getAllRecipes();
         <div class="card mt-5" style="width: 2000px;">
             <div class="card-header">
                 <h2 class="display-6 text-center">Recipes</h2>
+                <select id="categorySelect">
+                    <option value="all">All</option>
+                    <option value="category1">Breakfast</option>
+                    <option value="category2">Lunch</option>
+                    <option value="category3">Dinner</option>
+                    <option value="category4">Sides</option>
+                    <option value="category5">Dessert</option>
+                    <option value="category6">Healthy</option>
+                </select>
             </div>
             <div class="card-body">
-                <table class="table" style="width: 100%;">
+                <table class="table" style="width: 100%;" id="homepage-table">
                 <thead class="thead-dark">
                     <tr>
                     <th scope="col">Item</th>
@@ -62,7 +71,7 @@ $list_of_recipes = getAllRecipes();
                             ?>
                             <tr>
                             <th scope="row"><?php echo $row['recipeID']; ?></th>
-                            <td><?php echo $row['recipeName']; ?></td>
+                            <td><a href="recipe-details.php?id=<?php echo $row['recipeID']; ?>"><?php echo $row['recipeName']; ?></a></td>
                             <td><?php echo $row['descr']; ?></td>
                             <td><?php echo $row['cookTime']; ?></td>
                             <td>
@@ -76,7 +85,7 @@ $list_of_recipes = getAllRecipes();
                                     }
                                 ?>
                             </td>
-                            <td><?php echo $row['score']; ?></td>
+                            <td><?php echo $row['score']; ?>/5</td>
                             <?php
                         }
                     ?>
@@ -91,6 +100,10 @@ $list_of_recipes = getAllRecipes();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+
+</script>
 
 </body>
 </html>
