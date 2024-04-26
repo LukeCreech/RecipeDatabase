@@ -46,4 +46,14 @@ function get_password($username)
     $statement->closeCursor();
     return $result;
 }
+
+function getAllRecipes(){
+    global $db;
+    $query = "SELECT * FROM recipe";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll();
+    $statement->closeCursor();
+    return $result;
+}
 ?>

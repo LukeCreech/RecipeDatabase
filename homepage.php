@@ -18,6 +18,7 @@ if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
     header("Location: " .$loginpage);
     exit;
 }
+$list_of_recipes = getAllRecipes();
 ?>
 
 <?php
@@ -34,8 +35,24 @@ require ('navbar.php');
 </head>
 <body>
 
-<p> Hello, World </p>
-<button onclick="window.location.href='logout.php'">Logout</button>
+<table>
+    <thead>
+        <tr>
+            <th><b>Recipe ID</b><th>
+            <th><b>Recipe Name</b><th>
+            <th><b>Description</b><th>
+            <th><b>Cook Time</b><th>
+        </tr>
+    </thead>
+    <?php foreach ($list_of_recipes as $rec_info): ?>
+    <tr>
+        <td><?php echo $rec_info['recipeID']; ?></td>
+        <td><?php echo $rec_info['recipeName']; ?></td>        
+        <td><?php echo $rec_info['descr']; ?></td>          
+        <td><?php echo $rec_info['cookTime']; ?></td>
+    </tr>
+    <?php endforeach; ?>  
+</table>
 
 </body>
 </html>
