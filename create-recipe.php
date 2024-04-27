@@ -1,5 +1,16 @@
 <?php
+require ('main-db.php');
 require ('navbar.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
+{
+  if (!empty($_POST['createBtn']))    // $_GET['....']
+  {
+    $categories = isset($_POST['category']) ? $_POST['category'] : array();
+    addRecipe($_POST['recipeName'], $_POST['recipeDescription'], $_POST['cookTime'], $_POST['imageLink'], $_POST['ingredient'], $_POST['cost'], $_POST['instruction'], $categories);
+    
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +22,102 @@ require ('navbar.php');
     <title>Create Recipe</title>
 </head>
 <body>
-    
-    <p>Create Recipe</p>
-
+    <div>
+    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return validateInput()">
+    <table>
+        <tr>
+            <td width="50%">
+                <div class='mb-3'>
+                    Name:
+                    <input type='text' class='form-control' id='recipeName' name='recipeName'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class='mb-3'>
+                    Description:
+                    <input type='text' class='form-control' id='recipeDescription' name='recipeDescription'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class='mb-3'>
+                    Cook Time:
+                    <input type='text' class='form-control' id='cookTime' name='cookTime'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                <div class='mb-3'>
+                    Image Link:
+                    <input type='text' class='form-control' id='imageLink' name='imageLink'>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table style="width:98%" id="ingredientTable">
+        <tr id="ingredientRow">
+            <td width="50%">
+                <div class='mb-3'>
+                    Ingredient:
+                    <input type='text' class='form-control' id='ingredient' name='ingredient[]'>
+                </div>
+            </td>
+            <td>
+                <div class='mb-3'>
+                    Cost:
+                    <input type='text' class='form-control' id='cost' name='cost[]'>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button type="button" onclick="addIngredientRow()">Add Ingredient</button>
+    <table style="width:98%" id="instructionTable">
+        <tr id="instructionRow">
+            <td width="50%">
+                <div class='mb-3'>
+                    Instruction:
+                    <input type='text' class='form-control' id='instruction' name='instruction[]'>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button type="button" onclick="addInstructionRow()">Add Instruction</button>
+    <fieldset>
+        <p>Categories:</p>
+        <input type="checkbox" id="lunch" name="category[]" value="lunch">
+        <label for="lunch">Lunch</label><br>
+        <input type="checkbox" id="salad" name="category[]" value="salad">
+        <label for="salad">Salad</label><br>
+        <input type="checkbox" id="sides" name="category[]" value="sides">
+        <label for="sides">Side Dishes</label><br>
+        <input type="checkbox" id="healthy" name="category[]" value="healthy">
+        <label for="healthy">Healthy Dishes</label><br>
+        <input type="checkbox" id="dinner" name="category[]" value="dinner">
+        <label for="dinner">Dinner</label><br>
+        <input type="checkbox" id="breakfast" name="category[]" value="breakfast">
+        <label for="breakfast">Breakfast</label><br>
+        <input type="checkbox" id="dessert" name="category[]" value="dessert">
+        <label for="dessert">Desserts</label><br>
+    </fieldset>
+    <input type="submit" value="Create" id="createBtn" name="createBtn" class="btn btn-dark"/>
+    </form>
+    </div>
 </body>
 </html>
+
+<script>
+    function addIngredientRow() {
+        var ingredientTable = document.getElementById("ingredientTable");
+        var newRow = ingredientTable.insertRow(-1);
+        newRow.innerHTML = document.getElementById("ingredientRow").innerHTML;
+    }
+    function addInstructionRow() {
+        var instructionTable = document.getElementById("instructionTable");
+        var newRow = instructionTable.insertRow(-1);
+        newRow.innerHTML = document.getElementById("instructionRow").innerHTML;
+    }
+</script>
