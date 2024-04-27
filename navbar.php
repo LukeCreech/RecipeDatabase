@@ -29,6 +29,7 @@
                 <a class="dropdown-item" href="dinner.php">Dinner</a>
                 <a class="dropdown-item" href="lunch.php">Lunch</a>
                 <a class="dropdown-item" href="breakfast.php">Breakfast</a>
+                <a class="dropdown-item" href="salad.php">Salad</a>
                 <a class="dropdown-item" href="sides.php">Sides</a>
                 <a class="dropdown-item" href="desserts.php">Dessert</a>
                 <a class="dropdown-item" href="healthy.php">Healthy</a>

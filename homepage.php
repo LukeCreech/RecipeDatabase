@@ -22,7 +22,45 @@ require ('navbar.php');
 //     header("Location: " .$loginpage);
 //     exit;
 // }
+
 $list_of_recipes = getAllRecipes();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the selected value from the $_POST array
+    if(!empty($_POST['goBtn'])){
+
+        $selectedCategory = $_POST['categorySelect'];
+        
+        if($selectedCategory == "category1") {
+            $list_of_recipes = getBreakfast();
+        }
+    
+        if($selectedCategory == "category2") {
+            $list_of_recipes = getLunch();
+        }
+    
+        if($selectedCategory == "category3") {
+            $list_of_recipes = getDinner();
+        }
+
+        if($selectedCategory == "category4") {
+            $list_of_recipes = getSalads();
+        }
+    
+        if($selectedCategory == "category5") {
+            $list_of_recipes = getSides();
+        }
+    
+        if($selectedCategory == "category6") {
+            $list_of_recipes = getDessert();
+        }
+    
+        if($selectedCategory == "category7") {
+            $list_of_recipes = getHealthy();
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -42,15 +80,19 @@ $list_of_recipes = getAllRecipes();
         <div class="card mt-5" style="width: 2000px;">
             <div class="card-header">
                 <h2 class="display-6 text-center">Recipes</h2>
-                <select id="categorySelect">
-                    <option value="all">All</option>
-                    <option value="category1">Breakfast</option>
-                    <option value="category2">Lunch</option>
-                    <option value="category3">Dinner</option>
-                    <option value="category4">Sides</option>
-                    <option value="category5">Dessert</option>
-                    <option value="category6">Healthy</option>
-                </select>
+                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" onchange="return validateInput()">
+                    <select id="categorySelect" name="categorySelect">
+                        <option value="all">All</option>
+                        <option value="category1">Breakfast</option>
+                        <option value="category2">Lunch</option>
+                        <option value="category3">Dinner</option>
+                        <option value="category4">Salad</option>
+                        <option value="category5">Sides</option>
+                        <option value="category6">Dessert</option>
+                        <option value="category7">Healthy</option>
+                    </select>
+                    <input type="submit" value="Go" id="goBtn" name="goBtn"/>
+                </form>
             </div>
             <div class="card-body">
                 <table class="table" style="width: 100%;" id="homepage-table">
@@ -100,10 +142,6 @@ $list_of_recipes = getAllRecipes();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script>
-
-</script>
 
 </body>
 </html>
