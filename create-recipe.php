@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
   if (!empty($_POST['createBtn']))    // $_GET['....']
   {
     $categories = isset($_POST['category']) ? $_POST['category'] : array();
-    addRecipe($_POST['recipeName'], $_POST['recipeDescription'], $_POST['cookTime'], $_POST['imageLink'], $_POST['ingredient'], $_POST['cost'], $_POST['instruction'], $categories);
+    addRecipe($_POST['recipeName'], $_POST['recipeDescription'], $_POST['cookTime'], $_POST['imageLink'], $_POST['ingredient'], $_POST['cost'], $_POST['instruction'], $categories, $_SESSION['username']);
     
   }
 }
@@ -22,13 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
     <title>Create Recipe</title>
 </head>
 <body>
-    <div>
-    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return validateInput()">
+    <div class="container align-items-center justify-content-center">
+    <div class="row justify-content-center">
+        <div class="card mt-5" style="width: 1500px;">
+            <div class="card-body">
+                <h1 class="text-center">Create Recipe</h1>
+                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return validateInput()">
     <table>
         <tr>
             <td width="50%">
                 <div class='mb-3'>
-                    Name:
+                    <strong>Name:</strong>
                     <input type='text' class='form-control' id='recipeName' name='recipeName'>
                 </div>
             </td>
@@ -36,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
         <tr>
             <td width="50%">
                 <div class='mb-3'>
-                    Description:
+                    <strong>Description:</strong>
                     <input type='text' class='form-control' id='recipeDescription' name='recipeDescription'>
                 </div>
             </td>
@@ -44,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
         <tr>
             <td width="50%">
                 <div class='mb-3'>
-                    Cook Time:
+                    <strong>Cook Time:</strong>
                     <input type='text' class='form-control' id='cookTime' name='cookTime'>
                 </div>
             </td>
@@ -52,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
         <tr>
             <td width="50%">
                 <div class='mb-3'>
-                    Image Link:
+                    <strong>Photo URL:</strong>
                     <input type='text' class='form-control' id='imageLink' name='imageLink'>
                 </div>
             </td>
@@ -62,13 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
         <tr id="ingredientRow">
             <td width="50%">
                 <div class='mb-3'>
-                    Ingredient:
+                    <strong>Ingredients:</strong>
                     <input type='text' class='form-control' id='ingredient' name='ingredient[]'>
                 </div>
             </td>
             <td>
                 <div class='mb-3'>
-                    Cost:
+                    <strong>Cost:</strong>
                     <input type='text' class='form-control' id='cost' name='cost[]'>
                 </div>
             </td>
@@ -79,15 +83,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
         <tr id="instructionRow">
             <td width="50%">
                 <div class='mb-3'>
-                    Instruction:
+                    <strong>Instructions:</strong>
                     <input type='text' class='form-control' id='instruction' name='instruction[]'>
                 </div>
             </td>
         </tr>
     </table>
     <button type="button" onclick="addInstructionRow()">Add Instruction</button>
+    <br></br>
     <fieldset>
-        <p>Categories:</p>
+        <p><strong>Categories:</strong></p>
         <input type="checkbox" id="lunch" name="category[]" value="lunch">
         <label for="lunch">Lunch</label><br>
         <input type="checkbox" id="salad" name="category[]" value="salad">
@@ -106,6 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
     <input type="submit" value="Create" id="createBtn" name="createBtn" class="btn btn-dark"/>
     </form>
     </div>
+    </div>
+    </div>
+</div>
 </body>
 </html>
 

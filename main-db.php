@@ -147,7 +147,7 @@ function getCost($recipeID)
     return $result;
 }
 
-function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $costs, $instructions, $categories){
+function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $costs, $instructions, $categories, $username){
     global $db;   
        
    $query = "INSERT INTO recipe (recipeName, descr, cookTime) VALUES (:recipeName, :descr, :cookTime)";
@@ -167,12 +167,16 @@ function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $co
       $recipeID = $db->lastInsertId();
       $statement->closeCursor();
 
-      // TODO: FIND A WAY TO GET USERNAME FROM THIS
-    //   $statement = $db->prepare($query7);
-    //   $statement->bindValue(':recipeID', $recipeID);
-    //   $statement->bindValue(':username', "N/A");
-    //   $statement->execute();
-    //   $statement->closeCursor();
+      $statement = $db->prepare($query7);
+      $statement->bindValue(':recipeID', $recipeID);
+      try {
+        $statement->bindValue(':username', $username);
+      }
+      catch (Exception $e){
+        $statement->bindValue(':username', "grantcostello");
+      }
+      $statement->execute();
+      $statement->closeCursor();
             
       $numIngredients = count($ingredients);
       for ($i = 0; $i < $numIngredients; $i++) {

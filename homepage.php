@@ -7,21 +7,21 @@ require ('navbar.php');
 ?>
 
 <?php
-// session_start();
+session_start();
 
-// $loginpage = "user-login.php";
+$loginpage = "user-login.php";
 
-// if(session_status() === PHP_SESSION_NONE)
-// {
-//     header("Location: " .$loginpage);
-//     exit;
-// }
+if(session_status() === PHP_SESSION_NONE)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
 
-// if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
-// {
-//     header("Location: " .$loginpage);
-//     exit;
-// }
+if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
 
 $list_of_recipes = getAllRecipes();
 
