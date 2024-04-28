@@ -1,6 +1,7 @@
 <?php
 require ('navbar.php');
 require ("main-db.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -121,6 +122,12 @@ if (isset($_GET['id']))
                         <?php
                     }
                 ?>
+                <br>
+                <form action="add_favorite.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+                    <button type="submit" class="btn btn-primary">Add Recipe to Favorites</button>
+                </form>
             </div>
         </div>
     </div>

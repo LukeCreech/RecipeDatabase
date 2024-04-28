@@ -24,20 +24,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="favorites.php">Favorites</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="main-navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-                </a>
-                <div class="dropdown-menu" aria-labelledby="main-navbar-dropdown">
-                <a class="dropdown-item" href="dinner.php">Dinner</a>
-                <a class="dropdown-item" href="lunch.php">Lunch</a>
-                <a class="dropdown-item" href="breakfast.php">Breakfast</a>
-                <a class="dropdown-item" href="salad.php">Salad</a>
-                <a class="dropdown-item" href="sides.php">Sides</a>
-                <a class="dropdown-item" href="desserts.php">Dessert</a>
-                <a class="dropdown-item" href="healthy.php">Healthy</a>
-                </div>
-            </li>
         </ul>
         <form class="form-inline my-2 my-log-0">
                 <button class="btn btn-outline-danger" type="button" onclick="window.location.href='logout.php'">Logout</button>
