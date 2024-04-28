@@ -100,13 +100,16 @@ VALUES ('lukecreech', 'lmc3axn'),
 ('ashleyrommel', 'zwu6su'),
 ('grantcostello', 'ded5nh');
 
+-- Set up stored procedure for total cost per recipe
+CREATE PROCEDURE `countPrice`(IN `param1` INT) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT SUM(cost) FROM ingredient WHERE recipeID = param1;
+
 
 -- Data entries must fill in Recipe, Creates, Instruction, Ingredient, and Category/Categorized first
 -- If the new entry does not apply to any already existing category, you must add a new one
 
 -- Insert Caeser Salad https://www.budgetbytes.com/caesar-salad/
 INSERT INTO Recipe (recipeName, descr, cookTime)
-VALUES ("Caeser Salad", "This easy Caesar Salad recipe is made with homemade croutons and a rich & flavorful Caesar salad dressing. It’s simple enough to make any day of the week!", 20);
+VALUES ("Caesar Salad", "This easy Caesar Salad recipe is made with homemade croutons and a rich & flavorful Caesar salad dressing. It’s simple enough to make any day of the week!", 20);
 
 INSERT INTO Creates (username, recipeID)
 VALUES ("lukecreech", 1);
