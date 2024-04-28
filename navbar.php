@@ -21,6 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="your-recipes.php">Your Recipes</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="favorites.php">Favorites</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="main-navbar-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories

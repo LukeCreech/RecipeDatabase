@@ -20,6 +20,21 @@ try
         $statement->execute();
         $statement->closeCursor();
 
+        // find photoID
+        $photoID_query = "SELECT photoID FROM Photo NATURAL JOIN Displays WHERE recipeID = :recipeID";
+        $statement = $db->prepare($photoID_query);    
+        $statement->bindValue(':recipeID', $id);
+        $statement->execute();
+        $statement->closeCursor();
+        $photoID_result = $statement->fetchColumn();
+
+        // delete photo
+        $photo_query = "DELETE FROM Photo WHERE photoID = :photoID";
+        $statement = $db->prepare($photo_query);    
+        $statement->bindValue(':photoID', $photoID_result);
+        $statement->execute();
+        $statement->closeCursor();
+
         // delete displays
         $displays_query = "DELETE FROM Displays WHERE recipeID = :recipeID";
         $statement = $db->prepare($displays_query);    

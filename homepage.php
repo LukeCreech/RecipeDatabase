@@ -103,7 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <th scope="col">Description</th>
                     <th scope="col">Cook Time</th>
                     <th scope="col">Cost</th>
-                    <th scope="col">Rating</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -127,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     }
                                 ?>
                             </td>
-                            <td><?php echo $row['score']; ?>/5</td>
                             <?php
                         }
                     ?>

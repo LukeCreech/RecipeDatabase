@@ -50,7 +50,7 @@ function get_password($username)
 function getAllRecipes()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -61,7 +61,7 @@ function getAllRecipes()
 function getBreakfast()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN Categorized WHERE categoryID=6 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=6 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -72,7 +72,7 @@ function getBreakfast()
 function getLunch()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN Categorized WHERE categoryID=1 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=1 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -83,7 +83,7 @@ function getLunch()
 function getDinner()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN Categorized WHERE categoryID=5 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=5 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -94,7 +94,7 @@ function getDinner()
 function getSides()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN Categorized WHERE categoryID=3 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=3 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -105,7 +105,7 @@ function getSides()
 function getSalads()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN Categorized WHERE categoryID=2 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=2 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -116,7 +116,7 @@ function getSalads()
 function getDessert()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN categorized WHERE categoryID=7 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=7 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -127,7 +127,7 @@ function getDessert()
 function getHealthy()
 {
     global $db;
-    $query = "SELECT * FROM Recipe NATURAL JOIN Rating NATURAL JOIN categorized WHERE categoryID=4 ORDER BY recipeID ASC";
+    $query = "SELECT * FROM Recipe NATURAL JOIN Categorized WHERE categoryID=4 ORDER BY recipeID ASC";
     $statement = $db->prepare($query);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -149,8 +149,9 @@ function getCost($recipeID)
 
 function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $costs, $instructions, $categories, $username){
     global $db;   
+    $homepage = 'homepage.php';
        
-   $query = "INSERT INTO recipe (recipeName, descr, cookTime) VALUES (:recipeName, :descr, :cookTime)";
+   $query = "INSERT INTO Recipe (recipeName, descr, cookTime) VALUES (:recipeName, :descr, :cookTime)";
    $query2 = "INSERT INTO Ingredient (recipeID, ingredientName, cost) VALUES (:recipeID, :ingredientName, :cost)";  
    $query3 = "INSERT INTO Instruction (recipeID, stepNumber, step) VALUES (:recipeID, :stepNumber, :step)";
    $query4 = "INSERT INTO Categorized (categoryID, recipeID) VALUES (:categoryID, :recipeID)";
@@ -159,6 +160,7 @@ function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $co
    $query7 = "INSERT INTO Creates (username, recipeID) VALUES (:username, :recipeID)";
    
    try {
+
       $statement = $db->prepare($query);
       $statement->bindValue(':recipeName', $recipeName);
       $statement->bindValue(':descr', $descr);
@@ -268,6 +270,9 @@ function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $co
       $statement->bindValue(':photoID', $photoID);
       $statement->execute();
       $statement->closeCursor();
+
+      header("Location: " .$homepage);
+      exit;
 
    }  catch (PDOException $e)
    {
