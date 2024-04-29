@@ -73,6 +73,35 @@ if (isset($_GET['id']))
     $statement->execute();
     $image_result = $statement->fetchAll();
     $statement->closeCursor();
+
+    // avg rating query
+    $avg_query = "SELECT ROUND(AVG(score), 1) AS avg FROM Recipe NATURAL JOIN Rating WHERE recipeID = :recipeID GROUP BY recipeID";
+    $statement = $db->prepare($avg_query);
+    $statement->bindValue(':recipeID', $id);
+    $statement->execute();
+    $avg_result = $statement->fetchAll();
+    $statement->closeCursor();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(!empty($_POST['addCBtn'])){
+
+        $addC_query = "INSERT INTO Comment (username, recipeID, commentText) VALUES (:username, :recipeID, :commentText)";
+        $statement = $db->prepare($addC_query);
+        $statement->bindValue(':username', $_POST['username']);
+        $statement->bindValue(':recipeID', $_POST['id']);
+        $statement->bindValue(':commentText', $_POST['addComment']);
+        $statement->execute();
+        $statement->closeCursor();
+        
+        $comments_query = "SELECT C.username, C.commentText FROM Comment C NATURAL JOIN Recipe R
+        WHERE R.recipeID = :recipeID";
+        $statement = $db->prepare($comments_query);
+        $statement->bindValue(':recipeID', $id);
+        $statement->execute();
+        $comments_result = $statement->fetchAll();
+        $statement->closeCursor();
+    }
 }
 
 ?>
@@ -87,11 +116,16 @@ if (isset($_GET['id']))
                     ?>
                 </div>
                 <br>
+                <form action="add_favorite.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+                    <button type="submit" class="btn btn-primary">Add Recipe to Favorites</button>
+                </form>
                 <p><strong>Description:</strong> <?php echo $main_result[0]['descr'] ?></p>
                 <p><strong>Cook Time:</strong> <?php echo $main_result[0]['cookTime'] ?> minutes</p>
                 <strong>Ingredients:</strong>
                 <ul>
-                <?php
+                    <?php
                     foreach ($ingredients_result as $row)
                     {
                         ?>
@@ -102,17 +136,17 @@ if (isset($_GET['id']))
                 </ul>
                 <strong>Instructions:</strong>
                 <ol>
-                <?php
+                    <?php
                     foreach ($instructions_result as $row)
                     {
                         ?>
                         <li><?php echo $row['step']; ?></li>
                         <?php
                     }
-                ?>
+                    ?>
                 </ol>
                 <p><strong>Created By:</strong> <?php echo $user_result ?></p>
-                <p><strong>Rating:</strong> <?php echo $main_result[0]['score'] ?>/5</p>
+                <p><strong>Rating:</strong> <?php echo $avg_result[0]['avg'] ?>/5</p>
                 <strong>Comments:</strong><br>
                 <?php
                     foreach ($comments_result as $row)
@@ -122,12 +156,13 @@ if (isset($_GET['id']))
                         <?php
                     }
                 ?>
-                <br>
-                <form action="add_favorite.php" method="post">
+                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
                     <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                     <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
-                    <button type="submit" class="btn btn-primary">Add Recipe to Favorites</button>
+                    <input type="textarea" name="addComment">
+                    <input type="submit" value="Add Comment" id="addCBtn" name="addCBtn"/>
                 </form>
+                <br>
             </div>
         </div>
     </div>
