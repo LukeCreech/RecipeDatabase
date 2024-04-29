@@ -79,6 +79,13 @@ try
         $statement->execute();
         $statement->closeCursor();
 
+        // delete rating
+        $rating_query = "DELETE FROM Rating WHERE recipeID = :recipeID";
+        $statement = $db->prepare($rating_query);
+        $statement->bindValue(':recipeID', $id);
+        $statement->execute();
+        $statement->closeCursor();
+
         // delete recipe
         $recipe_query = "DELETE FROM Recipe WHERE recipeID = :recipeID";
         $statement = $db->prepare($recipe_query);    

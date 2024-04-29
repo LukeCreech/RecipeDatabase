@@ -158,6 +158,7 @@ function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $co
    $query5 = "INSERT INTO Photo (photoURL) VALUES (:photoURL)";
    $query6 = "INSERT INTO Displays (recipeID, photoID) VALUES (:recipeID, :photoID)";
    $query7 = "INSERT INTO Creates (username, recipeID) VALUES (:username, :recipeID)";
+   $query8 = "INSERT INTO Rating (username, recipeID, score) VALUES (:username, :recipeID, :score)";
    
    try {
 
@@ -268,6 +269,13 @@ function addRecipe($recipeName, $descr, $cookTime, $imageLink, $ingredients, $co
       $statement = $db->prepare($query6);
       $statement->bindValue(':recipeID', $recipeID);
       $statement->bindValue(':photoID', $photoID);
+      $statement->execute();
+      $statement->closeCursor();
+
+      $statement = $db->prepare($query8);
+      $statement->bindValue(':recipeID', $recipeID);
+      $statement->bindValue(':username', $username);
+      $statement->bindValue(':score', 5);
       $statement->execute();
       $statement->closeCursor();
 
