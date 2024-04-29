@@ -36,7 +36,7 @@ if (isset($_GET['id']))
 {
     $id = $_GET['id'];
 
-    $rating_query = "SELECT * FROM rating WHERE username = :username AND recipeID = :recipeID";
+    $rating_query = "SELECT * FROM Rating WHERE username = :username AND recipeID = :recipeID";
     $statement = $db->prepare($rating_query);   
     $statement->bindValue(':recipeID', $id);
     $statement->bindValue(':username', 'grantcostello');
@@ -155,7 +155,7 @@ if (isset($_GET['id']))
                         <div class="form-row align-items-center">
                             <input type="hidden" name="id" value="' . $_GET['id'] . '">
                             <input type="hidden" name="username" value="grantcostello">
-                            <input type="number" name="addRating" placeholder="Enter your rating out of 5">/5
+                            <input type="number" name="addRating" placeholder="Rating out of 5">/5
                             <input type="submit" value="Add Rating" id="addRBtn" name="addRBtn">
                         </div>
                     </form>';
@@ -165,11 +165,11 @@ if (isset($_GET['id']))
                     echo "You have already rated. Your current rating is: $current_rating/5.";
 
                     echo '
-                    <form method="post" action="recipe-details-submissions.php">
+                    <form method="post" action="recipe-details-submission.php">
                         <div class="form-row align-items-center">
                             <input type="hidden" name="id" value="' . $_GET['id'] . '">
                             <input type="hidden" name="username" value="' . $_SESSION['username'] . '">
-                            <input type="number" name="updateRating" placeholder="Enter your updated rating out of 5" value="' . $current_rating . '">/5
+                            <input type="number" name="updateRating" placeholder="Rating out of 5" value="' . $current_rating . '">/5
                             <input type="submit" value="Update Rating" id="updateRBtn" name="updateRBtn">
                         </div>
                     </form>';
