@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <table class="table" style="width: 100%;" id="homepage-table">
                 <thead class="thead-dark">
                     <tr>
-                    <th scope="col">Item</th>
+                    <!-- <th scope="col">Item</th> -->
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
                     <th scope="col">Cook Time</th>
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         {
                             ?>
                             <tr>
-                            <th scope="row"><?php echo $row['recipeID']; ?></th>
+                            <!-- <th scope="row"><?php echo $row['recipeID']; ?></th> -->
                             <td><a href="recipe-details.php?id=<?php echo $row['recipeID']; ?>"><?php echo $row['recipeName']; ?></a></td>
                             <td><?php echo $row['descr']; ?></td>
                             <td><?php echo $row['cookTime']; ?></td>
