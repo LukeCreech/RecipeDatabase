@@ -102,6 +102,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $comments_result = $statement->fetchAll();
         $statement->closeCursor();
     }
+
+    if(!empty($_POST['addRBtn'])){
+        $addR_query = "INSERT INTO Rating (username, recipeID, score) VALUES (:username, :recipeID, :score)";
+        $statement = $db->prepare($addR_query);
+        $statement->bindValue(':username', $_POST['username']);
+        $statement->bindValue(':recipeID', $_POST['id']);
+        $statement->bindValue(':score', $_POST['addRating']);
+        $statement->execute();
+        $statement->closeCursor();
+
+        $avg_query = "SELECT ROUND(AVG(score), 1) AS avg FROM Recipe NATURAL JOIN Rating WHERE recipeID = :recipeID GROUP BY recipeID";
+        $statement = $db->prepare($avg_query);
+        $statement->bindValue(':recipeID', $id);
+        $statement->execute();
+        $avg_result = $statement->fetchAll();
+        $statement->closeCursor();
+    }
 }
 
 ?>
@@ -147,6 +164,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ol>
                 <p><strong>Created By:</strong> <?php echo $user_result ?></p>
                 <p><strong>Rating:</strong> <?php echo $avg_result[0]['avg'] ?>/5</p>
+                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+                    <div class="form-row align-items-center">
+                        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                        <input type="hidden" name="username" value="<?php echo 'ashleyrommel'; ?>">
+                        <input type="number" name="addRating">/5
+                        <input type="submit" value="Add Rating" id="addRBtn" name="addRBtn">
+                    </div>
+                </form>
                 <strong>Comments:</strong><br>
                 <?php
                     foreach ($comments_result as $row)
