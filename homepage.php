@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <!-- <th scope="row"><?php echo $row['recipeID']; ?></th> -->
                             <td><a href="recipe-details.php?id=<?php echo $row['recipeID']; ?>"><?php echo $row['recipeName']; ?></a></td>
                             <td><?php echo $row['descr']; ?></td>
-                            <td><?php echo $row['cookTime']; ?></td>
+                            <td><?php echo $row['cookTime']; ?>m</td>
                             <td>
                                 $<?php
                                     // Fetch cost for each recipe
