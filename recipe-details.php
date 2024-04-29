@@ -21,6 +21,14 @@ if (isset($_GET['id']))
 {
     $id = $_GET['id'];
 
+    $rating_query = "SELECT * FROM rating WHERE username = :username AND recipeID = :recipeID";
+    $statement = $db->prepare($rating_query);   
+    $statement->bindValue(':recipeID', $id);
+    $statement->bindValue(':username', 'grantcostello');
+    $statement->execute();
+    $has_rating = $statement->fetchAll();
+    $statement->closeCursor(); 
+
     // find User that created recipe
     $user_query = "SELECT U.username, R.recipeName FROM Users U NATURAL JOIN Creates C 
     NATURAL JOIN Recipe R WHERE R.recipeID = :recipeID";
@@ -83,44 +91,6 @@ if (isset($_GET['id']))
     $statement->closeCursor();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(!empty($_POST['addCBtn'])){
-
-        $addC_query = "INSERT INTO Comment (username, recipeID, commentText) VALUES (:username, :recipeID, :commentText)";
-        $statement = $db->prepare($addC_query);
-        $statement->bindValue(':username', $_POST['username']);
-        $statement->bindValue(':recipeID', $_POST['id']);
-        $statement->bindValue(':commentText', $_POST['addComment']);
-        $statement->execute();
-        $statement->closeCursor();
-        
-        $comments_query = "SELECT C.username, C.commentText FROM Comment C NATURAL JOIN Recipe R
-        WHERE R.recipeID = :recipeID";
-        $statement = $db->prepare($comments_query);
-        $statement->bindValue(':recipeID', $id);
-        $statement->execute();
-        $comments_result = $statement->fetchAll();
-        $statement->closeCursor();
-    }
-
-    if(!empty($_POST['addRBtn'])){
-        $addR_query = "INSERT INTO Rating (username, recipeID, score) VALUES (:username, :recipeID, :score)";
-        $statement = $db->prepare($addR_query);
-        $statement->bindValue(':username', $_POST['username']);
-        $statement->bindValue(':recipeID', $_POST['id']);
-        $statement->bindValue(':score', $_POST['addRating']);
-        $statement->execute();
-        $statement->closeCursor();
-
-        $avg_query = "SELECT ROUND(AVG(score), 1) AS avg FROM Recipe NATURAL JOIN Rating WHERE recipeID = :recipeID GROUP BY recipeID";
-        $statement = $db->prepare($avg_query);
-        $statement->bindValue(':recipeID', $id);
-        $statement->execute();
-        $avg_result = $statement->fetchAll();
-        $statement->closeCursor();
-    }
-}
-
 ?>
 <div class="container align-items-center justify-content-center">
     <div class="row justify-content-center">
@@ -164,14 +134,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ol>
                 <p><strong>Created By:</strong> <?php echo $user_result ?></p>
                 <p><strong>Rating:</strong> <?php echo $avg_result[0]['avg'] ?>/5</p>
-                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-                    <div class="form-row align-items-center">
-                        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-                        <input type="hidden" name="username" value="<?php echo 'ashleyrommel'; ?>">
-                        <input type="number" name="addRating">/5
-                        <input type="submit" value="Add Rating" id="addRBtn" name="addRBtn">
-                    </div>
-                </form>
+                <?php if (count($has_rating) == 0) {
+                    echo '
+                    <form method="post" action="recipe-details-submission.php">
+                        <div class="form-row align-items-center">
+                            <input type="hidden" name="id" value="' . $_GET['id'] . '">
+                            <input type="hidden" name="username" value="grantcostello">
+                            <input type="number" name="addRating" placeholder="Enter your rating out of 5">/5
+                            <input type="submit" value="Add Rating" id="addRBtn" name="addRBtn">
+                        </div>
+                    </form>';
+                } else {
+                    $current_rating = $has_rating[0]['score'];
+                    
+                    echo "You have already rated. Your current rating is: $current_rating/5.";
+
+                    echo '
+                    <form method="post" action="recipe-details-submissions.php">
+                        <div class="form-row align-items-center">
+                            <input type="hidden" name="id" value="' . $_GET['id'] . '">
+                            <input type="hidden" name="username" value="' . $_SESSION['username'] . '">
+                            <input type="number" name="updateRating" placeholder="Enter your updated rating out of 5" value="' . $current_rating . '">/5
+                            <input type="submit" value="Update Rating" id="updateRBtn" name="updateRBtn">
+                        </div>
+                    </form>';
+                } ?>
                 <strong>Comments:</strong><br>
                 <?php
                     foreach ($comments_result as $row)
@@ -181,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php
                     }
                 ?>
-                <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+                <form method="post" action="recipe-details-submission.php">
                     <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
                     <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
                     <input type="textarea" name="addComment">
