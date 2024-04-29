@@ -3,6 +3,20 @@ require ('main-db.php');
 require ('navbar.php');
 session_start();
 
+$loginpage = "user-login.php";
+
+if(session_status() === PHP_SESSION_NONE)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+
+if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
 {
   if (!empty($_POST['createBtn']))    // $_GET['....']

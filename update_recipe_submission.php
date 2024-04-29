@@ -3,6 +3,20 @@ session_start();
 require ('navbar.php');
 require ('main-db.php');
 require ("connect-database.php");
+
+$loginpage = "user-login.php";
+
+if(session_status() === PHP_SESSION_NONE)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
+
+if(!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true)
+{
+    header("Location: " .$loginpage);
+    exit;
+}
 ?>
 
 <?php
