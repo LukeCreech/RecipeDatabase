@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
             <td width="50%">
                 <div class='mb-3'>
                     <strong>Cook Time:</strong>
-                    <input type='number' class='form-control' id='cookTime' name='cookTime'>
+                    <input type='text' pattern='\d+(\.\d{1,2})?' class='form-control' id='cookTime' name='cookTime'>
                 </div>
             </td>
         </tr>
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   // GET
             <td>
                 <div class='mb-3'>
                     <strong>Cost:</strong>
-                    <input type='number' class='form-control' id='cost' name='cost[]'>
+                    <input type='text' pattern='\d+(\.\d{1,2})?' class='form-control' id='cost' name='cost[]'>
                 </div>
             </td>
         </tr>

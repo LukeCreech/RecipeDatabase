@@ -103,6 +103,9 @@ VALUES ('lukecreech', 'lmc3axn'),
 -- Set up stored procedure for total cost per recipe
 CREATE PROCEDURE `countPrice`(IN `param1` INT) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT SUM(cost) FROM ingredient WHERE recipeID = param1;
 
+CREATE TRIGGER `checkScoreUnder0` BEFORE INSERT ON `rating` FOR EACH ROW IF NEW.score < 0 THEN SET NEW.score = 0; END IF
+
+CREATE TRIGGER `checkScoreOver5` BEFORE INSERT ON `rating` FOR EACH ROW IF NEW.score > 5 THEN SET NEW.score = 5; END IF
 
 -- Data entries must fill in Recipe, Creates, Instruction, Ingredient, and Category/Categorized first
 -- If the new entry does not apply to any already existing category, you must add a new one

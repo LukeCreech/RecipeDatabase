@@ -68,7 +68,7 @@ if (isset($_GET['id']))
                 <form action=update_recipe_submission.php method="post">
                     <input type="hidden" name="recipe-id" value="<?php echo $id; ?>">
                     <p><strong>Name:</strong> <input type="text" size="30" name="recipe-name" value="<?php echo $main_result[0]['recipeName'] ?>"></p>
-                    <p><strong>Cook Time:</strong> <input type="number" size="30" name="cook-time" value="<?php echo $main_result[0]['cookTime'] ?>"></p>
+                    <p><strong>Cook Time:</strong> <input type="text" pattern='\d+(\.\d{1,2})?' size="30" name="cook-time" value="<?php echo $main_result[0]['cookTime'] ?>"></p>
                     <strong>Ingredients:</strong>
                         <?php
                         $index = 0;
@@ -78,7 +78,7 @@ if (isset($_GET['id']))
                             <br>
                             <input type="hidden" name="old-ingredient-<?php echo $index ?>" value="<?php echo $row['ingredientName'] ?>">
                             <input type="text" size="30" name="ingredient-<?php echo $index ?>" value="<?php echo $row['ingredientName'] ?>">
-                            <input type="number" size="10" name="cost-<?php echo $index ?>" value="<?php echo $row['cost'] ?>">
+                            <input type="text" pattern='\d+(\.\d{1,2})?' size="10" name="cost-<?php echo $index ?>" value="<?php echo $row['cost'] ?>">
                             <?php
                             $index++;
                         }
