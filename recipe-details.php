@@ -72,7 +72,7 @@ if (isset($_GET['id']))
     $statement->closeCursor();
 
     // main query
-    $main_query = "SELECT * FROM Recipe NATURAL JOIN Rating WHERE recipeID = :recipeID";
+    $main_query = "SELECT * FROM Recipe WHERE recipeID = :recipeID";
     $statement = $db->prepare($main_query);
     $statement->bindValue(':recipeID', $id);
     $statement->execute();
